@@ -1,4 +1,4 @@
-# OOP224-Wokrs
+# OOP224-Works
 - Danylo Vityk
 - Student No: 176326213
 - Email ID: dvityk@myseneca.ca

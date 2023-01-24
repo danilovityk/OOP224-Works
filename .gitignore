@@ -1,6 +1,9 @@
 # Visual Studio
 *.sdf
+<<<<<<< HEAD
 # *.sln
+=======
+>>>>>>> 024b574a892af9fc3773739a1b634213338e6daf
 *.user
 *.suo
 *.opensdf

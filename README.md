@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Computer preparation and Getting Workshop files
 
 ## IPC144 Review Session  for OOP244 Students
@@ -57,3 +58,10 @@ git pull<ENTER>
 # Improtant Notes
 - Install [GlobalProtect](https://inside.senecacollege.ca/its/services/vpn/senecavpn.html) on your computer to have access to internal services of Seneca and the Matrix Linux cluster.
 - When transferring program files to Matrix using an SFTP or SSH client, make sure your transfer mode is always set to **TEXT**
+=======
+# OOP224-Works
+- Danylo Vityk
+- Student No: 176326213
+- Email ID: dvityk@myseneca.ca
+- OOP244NAA
+>>>>>>> 024b574a892af9fc3773739a1b634213338e6daf

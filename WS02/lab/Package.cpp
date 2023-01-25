@@ -25,9 +25,10 @@ namespace sdds {
 
            
 
-            // Add [4]: If th number of the records does not match the number of read ones, print an error message
+            // Add [4]: If the number of the records does not match the number of read ones, print an error message
             if (...................) {
                 cout << "Error reading the records, Check the data file "<< endl;
+                
             }
             else {
              

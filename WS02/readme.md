@@ -1,5 +1,7 @@
 # Workshop #2: Dynamic Memory
 * Version v1.1 (content of `correct_output.txt`  corrected)
+* Version v1.2 (DIY main.cpp V1.1, Reordered user's tweets report title)<br />
+  `correct_output.txt` updated to match the change
 
 In this workshop, you will use *references* to modify content of variables in other scopes, overload functions and allocate memory at run-time and deallocate that memory when it is no longer required. 
 
@@ -379,46 +381,46 @@ It prints a row number with a period before each user name. Then, it prints all 
 ```text
 ---------  Customers records entry ------------------
 
-Enter customer information (to exit, press Enter):
+Enter customer information (to exit, press Enter): 
  Enter User name: zebaism
  Enter likes_count: 595
  Enter retweets_count: 234
  Enter replies_count: 27
  Enter share videos (y/n): n
 
-Enter customer information (to exit, press Enter):
+Enter customer information (to exit, press Enter): 
  Enter User name: rohanv
  Enter likes_count: 12
  Enter retweets_count: 0
  Enter replies_count: 1
  Enter share videos (y/n): n
 
-Enter customer information (to exit, press Enter):
+Enter customer information (to exit, press Enter): 
  Enter User name: frank
  Enter likes_count: 15
  Enter retweets_count: 2
  Enter replies_count: 0
  Enter share videos (y/n): n
 
-Enter customer information (to exit, press Enter):
+Enter customer information (to exit, press Enter): 
  Enter User name: desibrah
  Enter likes_count: 39
  Enter retweets_count: 19
  Enter replies_count: 2
  Enter share videos (y/n): y
 
-Enter customer information (to exit, press Enter):
+Enter customer information (to exit, press Enter): 
  Enter User name: sheetut
  Enter likes_count: 1
  Enter retweets_count: 0
  Enter replies_count: 3
  Enter share videos (y/n): y
 
-Enter customer information (to exit, press Enter):
- Enter User name:
+Enter customer information (to exit, press Enter): 
+ Enter User name: 
 ---------------------------------------------------------
-                Users' tweets report
-   Name: re-tweets, likes, replies, share videos (y/n)
+                Users' tweets report                     
+ user name, likes, re-tweets, replies, share videos (y/n)
 ---------------------------------------------------------
 1. zebaism, 595, 234, 27, n
 
@@ -431,9 +433,10 @@ Enter customer information (to exit, press Enter):
 5. sheetut, 1, 0, 3, y
 
 ---------------------------------------------------------
-            Report was successfully created
+            Report was successfully created                
 Dynamically allocated memory was successfully deallocated
 ---------------------------------------------------------
+
 ```
 
 ## Reflection

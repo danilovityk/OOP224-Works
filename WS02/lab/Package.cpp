@@ -17,26 +17,34 @@ namespace sdds {
 
             // Add [1]: Set the noOfTraces to the number of records found in the file.
             
+            no_of_traces = noOfTraces();
                                    
             // Add [2]: Dynamically allocate an array of Customers into the global Customers' pointer (users) with the size of no_of_traces.
             
-
+            users = new Customers[no_of_traces];
+            
             // Add [3]: Load the Customers' records from the file into the dynamically created array (use a loop).
 
-           
+            for (int i = 0; i < no_of_traces; i++)
+            {
+                if(!loadTraces(users[i]))
+                    check = false;
+            }
 
             // Add [4]: If the number of the records does not match the number of read ones, print an error message
-            if (...................) {
+            if (check == false) {
                 cout << "Error reading the records, Check the data file "<< endl;
                 
             }
             else {
              
             // Add [5]: set  check to true 
-                
+                check = true;
             }
 
             // Add [6]: close the file; call closefile() function
+            
+            closefile();
 
         }
         else {
@@ -94,12 +102,28 @@ namespace sdds {
 
     // ADD [1]: implement the display function based on the following condition: (timeinhours > 1.0 and dayofweek == 'F') 
 
-
+    display(){
+    for(int i; i < no_of_traces; i++)
+    {
+        if(users[i].dayofweek == 'F' && users[i].timeinhours > 1.0)
+        {
+            cout << users[i].user_id << ", " << users[i].timeinhours << ", " << users[i].Fctime << ", " << users[i].Fwifitime << ", " << users[i].Package_Name << endl;
+        }
+    }
+    
+}
          
     
     // ADD [2]: implement the deallocateMemory function  
 
-        
+    deallocateMemory()
+    {
+        for (int i = 0; i < no_of_traces; i++)
+        {
+            delete[] users[i].Package_Name;
+        }
+        delete[] users;
+    }
 
 }
 

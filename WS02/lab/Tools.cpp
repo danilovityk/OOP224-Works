@@ -70,6 +70,7 @@ namespace sdds {
 
     
 
+
     void closefile() { // Fully provided
         if (fp) fclose(fp);
     }

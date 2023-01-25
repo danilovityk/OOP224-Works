@@ -61,14 +61,17 @@ namespace sdds {
 
            // Add [1]: allocate memory to the size of the Package_name + 1, keep its address in the name of the customers reference (user_info.Package_Name)
 
-            
+            user_info.Package_Name = new char [strlen(read_Package_name) + 1];
 
            // Add [2]:  copy the name into the newly allocated memory, use provided strCpy function
             
-
-
+            strCpy (user_info.Package_Name, read_Package_name);
+    
            // Add [3]: set  check to true if the previous process is successfully completed
-                        
+            
+            if(!user_info.Package_Name)
+                check = true;
+            
         }
         return check; 
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A27CF2E82981A2620071FEDE /* Package.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27CF2E22981A2610071FEDE /* Package.cpp */; };
 		A27CF2E92981A2620071FEDE /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27CF2E42981A2610071FEDE /* Tools.cpp */; };
+		A27CF2EB2981A42E0071FEDE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27CF2EA2981A42E0071FEDE /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +31,7 @@
 		A27CF2E32981A2610071FEDE /* Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Package.h; sourceTree = "<group>"; };
 		A27CF2E42981A2610071FEDE /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
 		A27CF2E52981A2620071FEDE /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
-		A27CF2E72981A2620071FEDE /* Correct output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Correct output.txt"; sourceTree = "<group>"; };
+		A27CF2EA2981A42E0071FEDE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +48,12 @@
 		A27CF2CE2981A2240071FEDE = {
 			isa = PBXGroup;
 			children = (
-				A27CF2E72981A2620071FEDE /* Correct output.txt */,
-				A27CF2E12981A2610071FEDE /* Filtered_Dataset.csv */,
+				A27CF2EA2981A42E0071FEDE /* main.cpp */,
 				A27CF2E22981A2610071FEDE /* Package.cpp */,
-				A27CF2E32981A2610071FEDE /* Package.h */,
 				A27CF2E42981A2610071FEDE /* Tools.cpp */,
+				A27CF2E32981A2610071FEDE /* Package.h */,
 				A27CF2E52981A2620071FEDE /* Tools.h */,
+				A27CF2E12981A2610071FEDE /* Filtered_Dataset.csv */,
 				A27CF2D82981A2240071FEDE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +125,7 @@
 			files = (
 				A27CF2E82981A2620071FEDE /* Package.cpp in Sources */,
 				A27CF2E92981A2620071FEDE /* Tools.cpp in Sources */,
+				A27CF2EB2981A42E0071FEDE /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

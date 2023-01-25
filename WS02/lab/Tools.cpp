@@ -23,25 +23,52 @@ namespace sdds {
 
     // To Do: read functions (4 overloaded read functions)
     
-    /*   
+      
 
-    int read(...............) {
-        return .............; 
+        int read(char packageName[]) {
+        
+            int returnValue{};
+            char buffer[60];
+            returnValue = fscanf(fp, "%60[^\n]\n", buffer);
+        
+            strCpy(packageName, buffer);
+            return returnValue;
+        }
+
+
+    int read(int* result) {
+        
+        int returnValue{};
+        int buffer{};
+        returnValue = fscanf(fp, "%d,", &buffer);
+        result = &buffer;
+               
+               
+        return returnValue;
     }
 
-    int read(...............) {
-        return .............;
+    int read(double* result) {
+        
+        int statusValue{};
+        double buffer{};
+        statusValue = fscanf(fp, "%lf,", &buffer);
+        result = &buffer;
+        
+        return statusValue;
     }
 
-    int read(..............) {
-        return .............;
+    int read(char result) {
+        
+        int statusValue{};
+        char buffer{};
+        fscanf(fp, "%[^ \t\n\r\v\f,]%*c", &buffer);
+        
+//        result = &buffer;
+        
+        return statusValue;
     }
 
-    int read(..............) {
-        return ............; 
-    }
-
-    */
+    
 
     void closefile() { // Fully provided
         if (fp) fclose(fp);

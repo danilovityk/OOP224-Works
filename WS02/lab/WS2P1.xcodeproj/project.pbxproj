@@ -30,7 +30,6 @@
 		A27CF2E32981A2610071FEDE /* Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Package.h; sourceTree = "<group>"; };
 		A27CF2E42981A2610071FEDE /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
 		A27CF2E52981A2620071FEDE /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
-		A27CF2E62981A2620071FEDE /* lab.sln */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lab.sln; sourceTree = "<group>"; };
 		A27CF2E72981A2620071FEDE /* Correct output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Correct output.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +49,6 @@
 			children = (
 				A27CF2E72981A2620071FEDE /* Correct output.txt */,
 				A27CF2E12981A2610071FEDE /* Filtered_Dataset.csv */,
-				A27CF2E62981A2620071FEDE /* lab.sln */,
 				A27CF2E22981A2610071FEDE /* Package.cpp */,
 				A27CF2E32981A2610071FEDE /* Package.h */,
 				A27CF2E42981A2610071FEDE /* Tools.cpp */,

@@ -6,6 +6,7 @@
 
 using namespace std;
 namespace sdds {
+
     int no_of_traces;
     Customers* users;
     
@@ -64,6 +65,15 @@ namespace sdds {
         bool check = false;
         char read_Package_name[50];
 
+        read(user_info.dayofweek);
+        read(user_info.user_id);
+        read(user_info.timeinhours);
+        read(user_info.dayofyear);
+        read(user_info.Fwifitime);
+        
+        
+        
+        
         if (read(user_info.dayofweek)&& read(user_info.user_id) && read(user_info.timeinhours) && read(user_info.dayofyear) && read(user_info.Fwifitime)  
             && read(user_info.Fctime) && read(read_Package_name)) { // if reading of data
 

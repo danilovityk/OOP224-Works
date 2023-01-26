@@ -2,6 +2,7 @@
 #define SDDS_TOOLS_H_
 
 namespace sdds {
+
 	int openFile_r(const char filename[]); // Provided
 	void closefile(); // Provided
 	int noOfTraces(); // Provided
@@ -19,3 +20,4 @@ namespace sdds {
 	int strLen(const char* s); // Provided
 }
 #endif 
+&

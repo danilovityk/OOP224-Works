@@ -25,15 +25,15 @@ namespace sdds {
     
       
 
-        int read(char packageName[]) {
-        
-            int returnValue{};
-            char buffer[60];
-            returnValue = fscanf(fp, "%60[^\n]\n", buffer);
-        
-            strCpy(packageName, buffer);
-            return returnValue;
-        }
+    int read(char packageName[]) {
+    
+        int returnValue{};
+        char buffer[60];
+        returnValue = fscanf(fp, "%60[^\n]\n", buffer);
+    
+        strCpy(packageName, buffer);
+        return returnValue;
+    }
 
 
     int read(int* result) {

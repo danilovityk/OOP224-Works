@@ -12,7 +12,7 @@ namespace sdds {
     // Add: Complete the implementation of the no argument [int loadTraces()] function
     int loadTraces() {       // Do: complete the missing parts as guided (6 parts)
         bool check = true;
-        int i = 0;
+        
         if (openFile_r(filename_r)) {
 
             // Add [1]: Set the noOfTraces to the number of records found in the file.
@@ -102,21 +102,21 @@ namespace sdds {
 
     // ADD [1]: implement the display function based on the following condition: (timeinhours > 1.0 and dayofweek == 'F') 
 
-    display(){
-    for(int i; i < no_of_traces; i++)
+    void display(){
+    for(int i = 0 ; i < no_of_traces; i++)
     {
         if(users[i].dayofweek == 'F' && users[i].timeinhours > 1.0)
         {
             cout << users[i].user_id << ", " << users[i].timeinhours << ", " << users[i].Fctime << ", " << users[i].Fwifitime << ", " << users[i].Package_Name << endl;
         }
     }
-    
+        cout << ".....................................................";
 }
          
     
     // ADD [2]: implement the deallocateMemory function  
 
-    deallocateMemory()
+    void deallocateMemory()
     {
         for (int i = 0; i < no_of_traces; i++)
         {

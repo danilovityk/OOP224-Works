@@ -17,12 +17,12 @@
 // Please don't change this file
 // This file is to test your full program
 
-#include<iostream>
+#include <iostream>
 #include "Package.h"
 
 using namespace std;
 using namespace sdds;
-const bool APP_OS_WINDOWS = true;
+//const bool APP_OS_WINDOWS = false;
 
 int main() {
     

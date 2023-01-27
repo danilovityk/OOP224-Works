@@ -65,17 +65,9 @@ namespace sdds {
         bool check = false;
         char read_Package_name[50];
 
-        read(user_info.dayofweek);
-        read(user_info.user_id);
-        read(user_info.timeinhours);
-        read(user_info.dayofyear);
-        read(user_info.Fwifitime);
+     
         
-        
-        
-        
-        if (read(user_info.dayofweek)&& read(user_info.user_id) && read(user_info.timeinhours) && read(user_info.dayofyear) && read(user_info.Fwifitime)  
-            && read(user_info.Fctime) && read(read_Package_name)) { // if reading of data
+        if (read(user_info.dayofweek) && read(user_info.user_id) && read(user_info.timeinhours) && read(user_info.dayofyear) && read(user_info.Fwifitime) && read(user_info.Fctime) && read(read_Package_name)) { // if reading of data
 
            // Add [1]: allocate memory to the size of the Package_name + 1, keep its address in the name of the customers reference (user_info.Package_Name)
 
@@ -87,7 +79,7 @@ namespace sdds {
     
            // Add [3]: set  check to true if the previous process is successfully completed
             
-            if(!user_info.Package_Name)
+            if(user_info.Package_Name)
                 check = true;
             
         }
@@ -115,10 +107,10 @@ namespace sdds {
     void display(){
     for(int i = 0 ; i < no_of_traces; i++)
     {
-        if(users[i].dayofweek == 'F' && users[i].timeinhours > 1.0)
-        {
+//        if(users[i].dayofweek == 'F' && users[i].timeinhours > 1.0)
+//        {
             cout << users[i].user_id << ", " << users[i].timeinhours << ", " << users[i].Fctime << ", " << users[i].Fwifitime << ", " << users[i].Package_Name << endl;
-        }
+  //      }
     }
         cout << ".....................................................";
 }

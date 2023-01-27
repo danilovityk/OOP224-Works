@@ -36,23 +36,23 @@ namespace sdds {
     }
 
 
-    int read(int* result) {
+    int read(int result) {
         
         int returnValue{};
         int buffer{};
         returnValue = fscanf(fp, "%d,", &buffer);
-        *result = buffer;
+        result = buffer;
                
                
         return returnValue;
     }
 
-    int read(double* result) {
+    int read(double result) {
         
         int statusValue{};
         double buffer{};
         statusValue = fscanf(fp, "%lf,", &buffer);
-        *result = buffer;
+        result = buffer;
         
         return statusValue;
     }
@@ -87,3 +87,4 @@ namespace sdds {
         return i;
     }
 }
+

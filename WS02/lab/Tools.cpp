@@ -27,7 +27,7 @@ namespace sdds {
 
     int read(char packageName[]) {
 
-        int returnValue{};
+        int returnValue = 0;
         char buffer[60];
         returnValue = fscanf(fp, "%60[^\n]\n", buffer);
 
@@ -36,36 +36,22 @@ namespace sdds {
     }
 
 
-    int read(int result) {
-        
-        int returnValue{};
-        int buffer{};
-        returnValue = fscanf(fp, "%d,", &buffer);
-        result = buffer;
-               
-               
-        return returnValue;
+    int read(int& result)
+    {
+        return fscanf(fp, "%d,", &result) == 1;
     }
 
-    int read(double result) {
-        
-        int statusValue{};
-        double buffer{};
-        statusValue = fscanf(fp, "%lf,", &buffer);
-        result = buffer;
-        
-        return statusValue;
+
+    int read(double& result)
+    {
+        return fscanf(fp, "%lf,", &result) == 1;
     }
 
-    int read(char result) {
-        
-        int statusValue{};
-        char buffer{};
-        statusValue = fscanf(fp, "%[^ \t\n\r\v\f,]%*c", &buffer);
-        
-        result = buffer;
-        
-        return statusValue;
+    int read(char& result)
+    {
+        return fscanf(fp, "%[^ \t\n\r\v\f,]%*c", &result) == 1;
+
+
     }
 
     

@@ -107,10 +107,11 @@ namespace sdds {
     void display(){
     for(int i = 0 ; i < no_of_traces; i++)
     {
-//        if(users[i].dayofweek == 'F' && users[i].timeinhours > 1.0)
-//        {
-            cout << users[i].user_id << ", " << users[i].timeinhours << ", " << users[i].Fctime << ", " << users[i].Fwifitime << ", " << users[i].Package_Name << endl;
-  //      }
+        if(users[i].dayofweek == 'F' && users[i].timeinhours > 1.0)
+        {
+            cout << users[i].user_id << "," << users[i].timeinhours << "," << users[i].Fctime << "," << users[i].Fwifitime << "," << users[i].Package_Name << endl;
+  
+        }
     }
         cout << ".....................................................";
 }

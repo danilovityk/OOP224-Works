@@ -2,7 +2,7 @@
 #ifndef SDDS_PACKAGE_H_
 #define SDDS_PACKAGE_H_
 
-#define filename_r "/Users/danilovityk/documents/OOP244/OOP-Workshops/ws02/lab/Filtered_Dataset.csv"
+#define filename_r "Filtered_Dataset.csv"
 
 namespace sdds {
 

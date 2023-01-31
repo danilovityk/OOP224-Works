@@ -20,7 +20,7 @@ namespace sdds {
     // complete
    
 
-void EmptyRecord(Customers customer)  // Sets Customer data members to an empty state
+void EmptyRecord(Customers& customer)  // Sets Customer data members to an empty state
 {
     customer.likes_count = 0;
     customer.share_videos = 0;
@@ -30,10 +30,11 @@ void EmptyRecord(Customers customer)  // Sets Customer data members to an empty 
     
 }
 
-void EmptyRecord(CustomersRecord custRec)   // Sets CustomersRecord data members to an empty state
+void EmptyRecord(CustomersRecord& custRec)   // Sets CustomersRecord data members to an empty state
 {
+    if (custRec.ptr_rec != NULL)
+        EmptyRecord(*custRec.ptr_rec);
     
- //   EmptyRecord(*custRec.ptr_rec);
     
     custRec.noOfRecords = 0;
     
@@ -46,10 +47,12 @@ bool read(Customers& rec){
     
     cout << " Enter User name: ";
     
-    cin.get(rec.user_name, 21);
+    cin.getline(rec.user_name, 21);
     
     if (strlen(rec.user_name) != 0)
         garbage = true;
+    
+    
     
     
     if (garbage)
@@ -63,21 +66,60 @@ bool read(Customers& rec){
         cout << " Enter replies_count: ";
         cin >> rec.replies_count;
         
+        cin.ignore(10000, '\n');
+        
         cout << "Enter share videos (y/n): ";
         cin.get (rec.share_videos);
         
+        cin.ignore(10000, '\n');
         
     }
     
-    cout << rec.user_name << endl;
     
     return garbage;
 }
 
 void addCustomer(CustomersRecord& t_rec, const Customers& c_rec)
 {
+    t_rec.noOfRecords++;
+    
+    Customers *tempCust = new Customers[t_rec.noOfRecords];
+    
+    // copying old array into a buffer
+    for (int i = 0; i < t_rec.noOfRecords - 1; i++){
+        tempCust[i] = t_rec.ptr_rec[i];
+    }
     
     
+    // adding the new element to the buffer array
+    tempCust[t_rec.noOfRecords - 1] = c_rec;
+    
+    // deallocation of the old array of customers.
+    if(!t_rec.ptr_rec) delete[] t_rec.ptr_rec;
+    
+    // memory alloc for the new array
+    t_rec.ptr_rec = new Customers[t_rec.noOfRecords];
+    
+    t_rec.ptr_rec = tempCust;
+    
+}
+
+void display(const Customers& c_rec)
+{
+    cout << c_rec.user_name << ", " << c_rec.likes_count << ", " << c_rec.retweets_count << ", " << c_rec.replies_count << ", " << c_rec.share_videos << endl;
+}
+
+void display(const CustomersRecord& t_rec)
+{
+    if (t_rec.ptr_rec != NULL)
+    {
+        for (int i = 0; i < t_rec.noOfRecords; i++)
+        {
+            cout << (i + 1) << ". ";
+            display(t_rec.ptr_rec[i]);
+            cout << endl;
+        }
+    }
 }
 
   }

@@ -22,16 +22,21 @@ namespace sdds {
     // to be completed
 
 
-void EmptyRecord(Customers customer);  // Sets Customer data members to an empty state
+void EmptyRecord(Customers& customer);  // Sets Customer data members to an empty state
 
 
-void EmptyRecord(CustomersRecord custRec);   // Sets CustomersRecord data members to an empty state
+void EmptyRecord(CustomersRecord& custRec);   // Sets CustomersRecord data members to an empty state
 
 
 bool read(Customers& rec);
 
 
+void addCustomer(CustomersRecord& t_rec, const Customers& c_rec);
               
+
+void display(const Customers& c_rec);
+
+void display(const CustomersRecord& t_rec);
 }
 
 #endif 

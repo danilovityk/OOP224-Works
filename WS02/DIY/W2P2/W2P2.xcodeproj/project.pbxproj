@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A27CF2E82981A2620071FEDE /* Package.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27CF2E22981A2610071FEDE /* Package.cpp */; };
-		A27CF2E92981A2620071FEDE /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27CF2E42981A2610071FEDE /* Tools.cpp */; };
-		A27CF2EB2981A42E0071FEDE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27CF2EA2981A42E0071FEDE /* main.cpp */; };
+		A26E574329860F960095CEA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26E574229860F960095CEA0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A27CF2D52981A2240071FEDE /* CopyFiles */ = {
+		A26E573D29860F960095CEA0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,18 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A26E57352984AFAC0095CEA0 /* Correct output.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Correct output.txt"; sourceTree = "<group>"; };
-		A27CF2D72981A2240071FEDE /* WS2P1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WS2P1; sourceTree = BUILT_PRODUCTS_DIR; };
-		A27CF2E12981A2610071FEDE /* Filtered_Dataset.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Filtered_Dataset.csv; sourceTree = "<group>"; };
-		A27CF2E22981A2610071FEDE /* Package.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Package.cpp; sourceTree = "<group>"; };
-		A27CF2E32981A2610071FEDE /* Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Package.h; sourceTree = "<group>"; };
-		A27CF2E42981A2610071FEDE /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
-		A27CF2E52981A2620071FEDE /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
-		A27CF2EA2981A42E0071FEDE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A26E573F29860F960095CEA0 /* W2P2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = W2P2; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26E574229860F960095CEA0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A27CF2D42981A2240071FEDE /* Frameworks */ = {
+		A26E573C29860F960095CEA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,63 +38,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A27CF2CE2981A2240071FEDE = {
+		A26E573629860F960095CEA0 = {
 			isa = PBXGroup;
 			children = (
-				A26E57352984AFAC0095CEA0 /* Correct output.txt */,
-				A27CF2EA2981A42E0071FEDE /* main.cpp */,
-				A27CF2E22981A2610071FEDE /* Package.cpp */,
-				A27CF2E42981A2610071FEDE /* Tools.cpp */,
-				A27CF2E32981A2610071FEDE /* Package.h */,
-				A27CF2E52981A2620071FEDE /* Tools.h */,
-				A27CF2E12981A2610071FEDE /* Filtered_Dataset.csv */,
-				A27CF2D82981A2240071FEDE /* Products */,
+				A26E574129860F960095CEA0 /* W2P2 */,
+				A26E574029860F960095CEA0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A27CF2D82981A2240071FEDE /* Products */ = {
+		A26E574029860F960095CEA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A27CF2D72981A2240071FEDE /* WS2P1 */,
+				A26E573F29860F960095CEA0 /* W2P2 */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A26E574129860F960095CEA0 /* W2P2 */ = {
+			isa = PBXGroup;
+			children = (
+				A26E574229860F960095CEA0 /* main.cpp */,
+			);
+			path = W2P2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A27CF2D62981A2240071FEDE /* WS2P1 */ = {
+		A26E573E29860F960095CEA0 /* W2P2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A27CF2DE2981A2240071FEDE /* Build configuration list for PBXNativeTarget "WS2P1" */;
+			buildConfigurationList = A26E574629860F960095CEA0 /* Build configuration list for PBXNativeTarget "W2P2" */;
 			buildPhases = (
-				A27CF2D32981A2240071FEDE /* Sources */,
-				A27CF2D42981A2240071FEDE /* Frameworks */,
-				A27CF2D52981A2240071FEDE /* CopyFiles */,
+				A26E573B29860F960095CEA0 /* Sources */,
+				A26E573C29860F960095CEA0 /* Frameworks */,
+				A26E573D29860F960095CEA0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = WS2P1;
-			productName = WS2P1;
-			productReference = A27CF2D72981A2240071FEDE /* WS2P1 */;
+			name = W2P2;
+			productName = W2P2;
+			productReference = A26E573F29860F960095CEA0 /* W2P2 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A27CF2CF2981A2240071FEDE /* Project object */ = {
+		A26E573729860F960095CEA0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					A27CF2D62981A2240071FEDE = {
+					A26E573E29860F960095CEA0 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = A27CF2D22981A2240071FEDE /* Build configuration list for PBXProject "WS2P1" */;
+			buildConfigurationList = A26E573A29860F960095CEA0 /* Build configuration list for PBXProject "W2P2" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,31 +104,29 @@
 				en,
 				Base,
 			);
-			mainGroup = A27CF2CE2981A2240071FEDE;
-			productRefGroup = A27CF2D82981A2240071FEDE /* Products */;
+			mainGroup = A26E573629860F960095CEA0;
+			productRefGroup = A26E574029860F960095CEA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A27CF2D62981A2240071FEDE /* WS2P1 */,
+				A26E573E29860F960095CEA0 /* W2P2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A27CF2D32981A2240071FEDE /* Sources */ = {
+		A26E573B29860F960095CEA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A27CF2E82981A2620071FEDE /* Package.cpp in Sources */,
-				A27CF2E92981A2620071FEDE /* Tools.cpp in Sources */,
-				A27CF2EB2981A42E0071FEDE /* main.cpp in Sources */,
+				A26E574329860F960095CEA0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A27CF2DC2981A2240071FEDE /* Debug */ = {
+		A26E574429860F960095CEA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -192,7 +184,7 @@
 			};
 			name = Debug;
 		};
-		A27CF2DD2981A2240071FEDE /* Release */ = {
+		A26E574529860F960095CEA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -243,7 +235,7 @@
 			};
 			name = Release;
 		};
-		A27CF2DF2981A2240071FEDE /* Debug */ = {
+		A26E574729860F960095CEA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -251,7 +243,7 @@
 			};
 			name = Debug;
 		};
-		A27CF2E02981A2240071FEDE /* Release */ = {
+		A26E574829860F960095CEA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -262,25 +254,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A27CF2D22981A2240071FEDE /* Build configuration list for PBXProject "WS2P1" */ = {
+		A26E573A29860F960095CEA0 /* Build configuration list for PBXProject "W2P2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A27CF2DC2981A2240071FEDE /* Debug */,
-				A27CF2DD2981A2240071FEDE /* Release */,
+				A26E574429860F960095CEA0 /* Debug */,
+				A26E574529860F960095CEA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A27CF2DE2981A2240071FEDE /* Build configuration list for PBXNativeTarget "WS2P1" */ = {
+		A26E574629860F960095CEA0 /* Build configuration list for PBXNativeTarget "W2P2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A27CF2DF2981A2240071FEDE /* Debug */,
-				A27CF2E02981A2240071FEDE /* Release */,
+				A26E574729860F960095CEA0 /* Debug */,
+				A26E574829860F960095CEA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A27CF2CF2981A2240071FEDE /* Project object */;
+	rootObject = A26E573729860F960095CEA0 /* Project object */;
 }

@@ -47,7 +47,7 @@ int main() {
         cout << data[i++] << endl;
         cout << "Enter customer information (to exit, press Enter): " << endl;
         if (read(c_rec)) {
-            addCustomer(t_rec, c_rec);
+            //addCustomer(t_rec, c_rec);
         }
         else {
             Check = true;
@@ -58,7 +58,7 @@ int main() {
     cout << " user name, likes, re-tweets, replies, share videos (y/n)" << endl;
     cout << "---------------------------------------------------------" << endl;
 
-    display(t_rec);
+   // display(t_rec);
     cout << "---------------------------------------------------------" << endl;
     cout << "            Report was successfully created                " << endl;
 

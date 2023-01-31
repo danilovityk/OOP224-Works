@@ -1,0 +1,13 @@
+*
+*
+*       Name: Danylo Vityk
+*       Email: dvityk@myseneca.ca
+*       Sudent ID: 176326213
+*       Date: Jan 31, 2023
+*
+*
+*
+
+
+
+I understood how to perform dynamic memory allocation and prevent memory leaks. I got help from You on part one where I needed to add the '&' sign to pass elements of the array by reference instead of value. I understood how it works, and even if I have to pass the element of the global array I have to pass its address. The hardest thing for me was actually that '&' sign, because I couldn't understand what is wrong with my code for hours.

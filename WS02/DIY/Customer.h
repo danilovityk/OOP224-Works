@@ -29,12 +29,12 @@ namespace sdds {
         Customers* ptr_rec;  // Dynamically holds the customers' tweets' report.
         int noOfRecords;
     };
-    
-       
+
+
     void read(char* str, int len);
    
     // to be completed
-
+ 
 
 void EmptyRecord(Customers& customer);  // Sets Customer data members to an empty state
 
@@ -51,6 +51,7 @@ void addCustomer(CustomersRecord& t_rec, const Customers& c_rec);
 void display(const Customers& c_rec);
 
 void display(const CustomersRecord& t_rec);
+
 }
 
 #endif 

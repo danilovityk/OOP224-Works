@@ -38,19 +38,19 @@ void EmptyRecord(Customers& customer)  // Sets Customer data members to an empty
     customer.share_videos = 0;
     customer.replies_count = 0;
     customer.retweets_count = 0;
-    customer.user_name[0] = '\0';
+    strCpy(customer.user_name,  "");
     
 }
 
-void EmptyRecord(CustomersRecord& custRec)   // Sets CustomersRecord data members to an empty state
+void EmptyRecord(CustomersRecord& custRec) // Sets CustomersRecord data members to an empty state
 {
     if (custRec.ptr_rec != NULL)
-        EmptyRecord(*custRec.ptr_rec);
-    
+        custRec.ptr_rec = NULL;
     
     custRec.noOfRecords = 0;
-    
 }
+
+
 
 
 
@@ -101,7 +101,6 @@ void addCustomer(CustomersRecord& t_rec, const Customers& c_rec)
     for (int i = 0; i < t_rec.noOfRecords - 1; i++){
         tempCust[i] = t_rec.ptr_rec[i];
     }
-    
     
     // adding the new element to the buffer array
     tempCust[t_rec.noOfRecords - 1] = c_rec;

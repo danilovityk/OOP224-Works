@@ -11,9 +11,39 @@ namespace sdds {
 
 	//class Department does here
 	
+   
+class Department {
+    
+    
+private:
+    char* d_departmentName;
+    Project* d_Projects;
+    int d_numberOfProjects;
+    double d_budget = 15345.99;
+    
+public:
+    void updateName(const char* newname);
+    void updateBudget(double change);
+    bool addProject(Project& newproject);
+    void createDepartment(const char* newname, Project& newproject, double change);
+    Project* fetchProjects() const;
+    int fetchNumProjects() const;
+    double fetchBudget() const;
+    char* fetchName() const;
+    double totalexpenses();
+    double remainingBudget();
+    void clearDepartment();
+
+    
+
+};
 	
-	
-	
+
+
+
+
+
+
 	
 	//helper functions - do not belong inside the class
     void display(const Project& project);

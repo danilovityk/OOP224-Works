@@ -58,7 +58,7 @@ void Department::updateBudget(double change)
 
 bool Department::addProject(Project& newproject)
 {
-    bool garbage = false;
+    bool functionStatus = false;
     
     double expenses = totalexpenses() + newproject.m_cost;
     
@@ -79,7 +79,7 @@ bool Department::addProject(Project& newproject)
             
             d_numberOfProjects = 1;
             
-            garbage = true;
+            functionStatus = true;
             
         }else if (d_numberOfProjects > 0)
             
@@ -99,7 +99,7 @@ bool Department::addProject(Project& newproject)
             
             d_numberOfProjects++;
             
-            garbage = true;
+            functionStatus = true;
         }
         
         
@@ -107,7 +107,7 @@ bool Department::addProject(Project& newproject)
     
     
     
-    return garbage;
+    return functionStatus;
 }
 
 

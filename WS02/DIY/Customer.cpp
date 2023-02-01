@@ -13,9 +13,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
+#include <string.h>
 using namespace std;
 #include "Customer.h"
 #include "Tools.h"
+
 
 namespace sdds {
 
@@ -35,19 +37,18 @@ namespace sdds {
 void EmptyRecord(Customers& customer)  // Sets Customer data members to an empty state
 {
     customer.likes_count = 0;
-    customer.share_videos = 0;
+    customer.share_videos = '\0';
     customer.replies_count = 0;
     customer.retweets_count = 0;
-    customer.user_name[0] = '\0';
+    strCpy(customer.user_name, "");
     
 }
 
 void EmptyRecord(CustomersRecord& custRec)   // Sets CustomersRecord data members to an empty state
 {
-    if (custRec.ptr_rec != NULL)
-        EmptyRecord(*custRec.ptr_rec);
     
-    
+     	custRec.ptr_rec = NULL;
+   
     custRec.noOfRecords = 0;
     
 }
@@ -80,7 +81,7 @@ bool read(Customers& rec){
         
         cin.ignore(10000, '\n');
         
-        cout << "Enter share videos (y/n): ";
+        cout << " Enter share videos (y/n): ";
         cin.get (rec.share_videos);
         
         cin.ignore(10000, '\n');
@@ -107,7 +108,7 @@ void addCustomer(CustomersRecord& t_rec, const Customers& c_rec)
     tempCust[t_rec.noOfRecords - 1] = c_rec;
     
     // deallocation of the old array of customers.
-    if(!t_rec.ptr_rec) delete[] t_rec.ptr_rec;
+    if (t_rec.ptr_rec != NULL) delete[] t_rec.ptr_rec;
     
     // memory alloc for the new array
     t_rec.ptr_rec = new Customers[t_rec.noOfRecords];

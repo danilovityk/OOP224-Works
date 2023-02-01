@@ -1,14 +1,14 @@
-In line number 34 of your output:
+In line number 21 of your output:
 The output should be:
 
  ^
 But your output is: 
-==180523== Invalid read of size 8
+.....................................................
 ^
 
 Unmatched character details:
 The character in column 1 is supposed to be:
   [Empty Line] ASCII code(0)
 but you printed
-  [=] ASCII code(61)
+  [.] ASCII code(46)
 

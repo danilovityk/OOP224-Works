@@ -15,9 +15,6 @@ T,3,0.001664722,121,5993,0,com.eg.android.AlipayGphone
 T,1,0.083888611,121,301999,0,com.fumei.wsbl.activity
 T,1,0.134443333,121,483996,0,com.fumei.yhcq.activity
 T,2,0.008332778,121,0,29998,com.google.android.gallery3d
-T,2,14.21870861,121,37214246,13973105,com.google.android.googlequicksearchbox
-T,5,4.98891,121,17951684,8392,com.google.android.googlequicksearchbox
-T,8,0.008331944,121,29995,0,com.google.android.googlequicksearchbox
 T,2,0.002765,121,9954,0,com.hellotext.hello
 T,2,0.001109722,121,1996,1999,com.hellotext.hello
 T,2,0.1522175,121,49998,497985,com.hupu.games
@@ -71,8 +68,6 @@ F,0,0.021109722,122,75995,0,com.douguo.abiteofchina2
 F,0,0.011592222,122,41732,0,com.eg.android.AlipayGphone
 F,2,0.011109722,122,0,39995,com.eg.android.AlipayGphone
 F,2,0.000552778,122,0,1990,com.endomondo.android.pro
-F,2,5.962786944,122,17981858,3484175,com.google.android.googlequicksearchbox
-F,5,4.687109167,122,6770647,10102946,com.google.android.googlequicksearchbox
 F,2,0.002221667,122,3998,4000,com.hellotext.hello
 F,0,0.008332778,122,0,29998,com.intsig.BizCardReader
 F,0,0.025779167,122,92805,0,com.jingdong.app.mall

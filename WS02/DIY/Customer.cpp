@@ -110,10 +110,11 @@ void addCustomer(CustomersRecord& t_rec, const Customers& c_rec)
     // deallocation of the old array of customers.
     delete[] t_rec.ptr_rec;
     
-    // memory alloc for the new array
-    t_rec.ptr_rec = new Customers[t_rec.noOfRecords];
+    
+    
     
     t_rec.ptr_rec = tempCust;
+    
     
 }
 

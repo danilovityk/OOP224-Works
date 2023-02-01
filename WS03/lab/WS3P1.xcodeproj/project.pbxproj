@@ -8,17 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A2D5DC3C2989F2C0007290E1 /* Department.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2D5DC302989F2C0007290E1 /* Department.cpp */; };
+		A2D5DC432989F905007290E1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2D5DC422989F905007290E1 /* main.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A2D5DC372989F2C0007290E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A2D5DC332989F2C0007290E1 /* WS3P1.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A2D5DC142989DC99007290E1;
-			remoteInfo = WS3P1;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A2D5DC122989DC99007290E1 /* CopyFiles */ = {
@@ -35,12 +26,8 @@
 /* Begin PBXFileReference section */
 		A2D5DC142989DC99007290E1 /* WS3P1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WS3P1; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D5DC302989F2C0007290E1 /* Department.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Department.cpp; path = ../../../../../Desktop/lab/Department.cpp; sourceTree = "<group>"; };
-		A2D5DC312989F2C0007290E1 /* lab.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lab.vcxproj; path = ../../../../../Desktop/lab/lab.vcxproj; sourceTree = "<group>"; };
-		A2D5DC322989F2C0007290E1 /* lab.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lab.vcxproj.filters; path = ../../../../../Desktop/lab/lab.vcxproj.filters; sourceTree = "<group>"; };
-		A2D5DC332989F2C0007290E1 /* WS3P1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WS3P1.xcodeproj; path = ../../../../../Desktop/lab/WS3P1.xcodeproj; sourceTree = "<group>"; };
 		A2D5DC392989F2C0007290E1 /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Department.h; path = ../../../../../Desktop/lab/Department.h; sourceTree = "<group>"; };
-		A2D5DC3A2989F2C0007290E1 /* WS3P1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WS3P1; path = ../../../../../Desktop/lab/WS3P1; sourceTree = "<group>"; };
-		A2D5DC3B2989F2C0007290E1 /* lab.sln */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lab.sln; path = ../../../../../Desktop/lab/lab.sln; sourceTree = "<group>"; };
+		A2D5DC422989F905007290E1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,13 +44,9 @@
 		A2D5DC0B2989DC99007290E1 = {
 			isa = PBXGroup;
 			children = (
+				A2D5DC422989F905007290E1 /* main.cpp */,
 				A2D5DC302989F2C0007290E1 /* Department.cpp */,
 				A2D5DC392989F2C0007290E1 /* Department.h */,
-				A2D5DC3B2989F2C0007290E1 /* lab.sln */,
-				A2D5DC312989F2C0007290E1 /* lab.vcxproj */,
-				A2D5DC322989F2C0007290E1 /* lab.vcxproj.filters */,
-				A2D5DC3A2989F2C0007290E1 /* WS3P1 */,
-				A2D5DC332989F2C0007290E1 /* WS3P1.xcodeproj */,
 				A2D5DC152989DC99007290E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,14 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				A2D5DC142989DC99007290E1 /* WS3P1 */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A2D5DC342989F2C0007290E1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A2D5DC382989F2C0007290E1 /* WS3P1 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,12 +104,6 @@
 			mainGroup = A2D5DC0B2989DC99007290E1;
 			productRefGroup = A2D5DC152989DC99007290E1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A2D5DC342989F2C0007290E1 /* Products */;
-					ProjectRef = A2D5DC332989F2C0007290E1 /* WS3P1.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A2D5DC132989DC99007290E1 /* WS3P1 */,
@@ -142,21 +111,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		A2D5DC382989F2C0007290E1 /* WS3P1 */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = WS3P1;
-			remoteRef = A2D5DC372989F2C0007290E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXSourcesBuildPhase section */
 		A2D5DC102989DC99007290E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D5DC432989F905007290E1 /* main.cpp in Sources */,
 				A2D5DC3C2989F2C0007290E1 /* Department.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

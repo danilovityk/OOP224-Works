@@ -13,12 +13,18 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
+<<<<<<< HEAD
 #include <string.h>
+=======
+>>>>>>> parent of 2ad81c9 (First WS3 commit)
 using namespace std;
 #include "Customer.h"
 #include "Tools.h"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 2ad81c9 (First WS3 commit)
 namespace sdds {
 
     // complete
@@ -37,6 +43,7 @@ namespace sdds {
 void EmptyRecord(Customers& customer)  // Sets Customer data members to an empty state
 {
     customer.likes_count = 0;
+<<<<<<< HEAD
     customer.share_videos = '\0';
     customer.replies_count = 0;
     customer.retweets_count = 0;
@@ -51,10 +58,30 @@ void EmptyRecord(CustomersRecord& custRec)   // Sets CustomersRecord data member
    
     custRec.noOfRecords = 0;
     
+=======
+    customer.share_videos = 0;
+    customer.replies_count = 0;
+    customer.retweets_count = 0;
+    strCpy(customer.user_name,  "");
+    
+}
+
+void EmptyRecord(CustomersRecord& custRec) // Sets CustomersRecord data members to an empty state
+{
+    if (custRec.ptr_rec != NULL)
+        custRec.ptr_rec = NULL;
+    
+    custRec.noOfRecords = 0;
+>>>>>>> parent of 2ad81c9 (First WS3 commit)
 }
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 2ad81c9 (First WS3 commit)
 bool read(Customers& rec){
     bool garbage = false;
     
@@ -81,7 +108,11 @@ bool read(Customers& rec){
         
         cin.ignore(10000, '\n');
         
+<<<<<<< HEAD
         cout << " Enter share videos (y/n): ";
+=======
+        cout << "Enter share videos (y/n): ";
+>>>>>>> parent of 2ad81c9 (First WS3 commit)
         cin.get (rec.share_videos);
         
         cin.ignore(10000, '\n');
@@ -103,11 +134,15 @@ void addCustomer(CustomersRecord& t_rec, const Customers& c_rec)
         tempCust[i] = t_rec.ptr_rec[i];
     }
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> parent of 2ad81c9 (First WS3 commit)
     // adding the new element to the buffer array
     tempCust[t_rec.noOfRecords - 1] = c_rec;
     
     // deallocation of the old array of customers.
+<<<<<<< HEAD
     delete[] t_rec.ptr_rec;
     
     
@@ -116,6 +151,15 @@ void addCustomer(CustomersRecord& t_rec, const Customers& c_rec)
     t_rec.ptr_rec = tempCust;
     
     
+=======
+    if(!t_rec.ptr_rec) delete[] t_rec.ptr_rec;
+    
+    // memory alloc for the new array
+    t_rec.ptr_rec = new Customers[t_rec.noOfRecords];
+    
+    t_rec.ptr_rec = tempCust;
+    
+>>>>>>> parent of 2ad81c9 (First WS3 commit)
 }
 
 void display(const Customers& c_rec)

@@ -47,7 +47,7 @@ void EmptyRecord(Customers& customer)  // Sets Customer data members to an empty
 void EmptyRecord(CustomersRecord& custRec)   // Sets CustomersRecord data members to an empty state
 {
     
-     	custRec.ptr_rec = NULL;
+    custRec.ptr_rec = NULL;
    
     custRec.noOfRecords = 0;
     
@@ -108,7 +108,7 @@ void addCustomer(CustomersRecord& t_rec, const Customers& c_rec)
     tempCust[t_rec.noOfRecords - 1] = c_rec;
     
     // deallocation of the old array of customers.
-    if (t_rec.ptr_rec != NULL) delete[] t_rec.ptr_rec;
+    delete[] t_rec.ptr_rec;
     
     // memory alloc for the new array
     t_rec.ptr_rec = new Customers[t_rec.noOfRecords];

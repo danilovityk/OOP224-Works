@@ -82,7 +82,7 @@ void Toys::display()const
             cout.width(11);
             cout << "On Sale ";
         }else {
-            cout << "       ";
+            cout << "        ";
         }
     }else{
         cout << "Invalid Toy";

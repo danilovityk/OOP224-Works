@@ -27,7 +27,7 @@ class Store{
 private:
     char m_sName[MAX_SNAME];// Store name, up to MAX_SNAME size
     int m_noOfToys;//No of toys;
-    int m_addToys = 0;//no of toys added
+    int m_addToys;//no of toys added
     Toys m_toy[MAX_NUM_TOYS];// statically array of toys with size MAX_NUM_TOYS
     
 public:

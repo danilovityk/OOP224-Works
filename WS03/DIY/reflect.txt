@@ -1,0 +1,15 @@
+/*
+        Name: Danylo Vityk
+        Email: dvityk@myseneca.ca
+        Sudent ID: 176326213
+        Date: Feb 1, 2023
+
+
+ I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+
+*/
+
+
+The hardest thing to me in this workshop was getting used to getter and setter functions and privacy modifiers at all. The hardest thing in lab part was fixing the memory leak, as I couldn't find its reason for some time. Also, I have spent plenty of time to figure out that Store structure instance have to be cleaned before being filled again.
+

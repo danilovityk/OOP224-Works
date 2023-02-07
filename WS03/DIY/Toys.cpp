@@ -79,8 +79,10 @@ void Toys::display()const
         cout << fixed << setprecision(2) << m_price;
         
         if(m_onSale){
-            cout.width(10);
-            cout << "On Sale";
+            cout.width(11);
+            cout << "On Sale ";
+        }else {
+            cout << "       ";
         }
     }else{
         cout << "Invalid Toy";

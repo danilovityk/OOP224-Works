@@ -10,7 +10,7 @@
 
 */
 
-
+#include <cstring>
 #include <iostream>
 #include <iomanip>
 #include "Toys.h"

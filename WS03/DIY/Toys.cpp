@@ -32,6 +32,7 @@ void Toys::addToys(const char* tname, int sku, double price, int age)
         m_sku = sku;
         m_price = price;
         m_age = age;
+        m_onSale = false;
         
     }else
     {

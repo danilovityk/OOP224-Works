@@ -16,9 +16,11 @@ void SoccerTeam::setTeam(const SoccerTeam& team)
 
 void SoccerTeam::setName(const char* tname)
 {
-    if (tname != nullptr)
+    if (tname != nullptr & tname[0] != '\0')
     {
         strcpy(m_teamName, tname);
+    }else{
+        setEmpty();
     }
 }
 
@@ -47,10 +49,10 @@ void SoccerTeam::setEmpty()
 
 bool SoccerTeam::isEmpty() const
 {
-    bool result = true;
+    bool result = false;
     
     if(m_teamName[0] != '\0' && m_fines >= 0 && m_noFouls >= 0)
-        result = false;
+        result = true;
     
     
     
@@ -91,7 +93,7 @@ std::ostream& SoccerTeam::display()const{
     
  
     
-    if(!isEmpty())
+    if(isEmpty())
     {
         cout.unsetf(ios::right);
         cout.setf(ios::left);
@@ -110,7 +112,7 @@ std::ostream& SoccerTeam::display()const{
         cout.width(10);
         if (m_golas > 0){
             cout << m_golas << "w";
-        } else{cout << m_golas;}
+        } else{cout << m_golas << " ";}
         
         return cout;
         

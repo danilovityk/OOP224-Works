@@ -9,21 +9,20 @@ namespace sdds{
 
 void Tournament::setTournament(const char* name, int noOfteam,const SoccerTeam* soccer)
 {
-    if (name != nullptr && strlen(name) != 0 && noOfteam > 0 && soccer != nullptr){
+    if (name != nullptr && name[0] != '\0' && noOfteam > 0)
+    {
         m_num = noOfteam;
         m_name = new char[strlen(name) + 1];
         strcpy(m_name, name);
         
         m_soccer = new SoccerTeam [m_num];
         
-        for (int i = 0; i < m_num; i ++)
+        for (int i = 0; i < m_num; i++)
         {
             m_soccer[i] = soccer[i];
         }
-        
-    }else
-    {
-        void setEmpty();
+    }else{
+        setEmpty();
     }
 }
 
@@ -32,11 +31,7 @@ void Tournament::setTournament(const char* name, int noOfteam,const SoccerTeam* 
 void Tournament::setEmpty()
 {
     m_num = 0;
-    
-   
     m_name = nullptr;
-    
- 
     m_soccer = nullptr;
 }
 
@@ -112,6 +107,7 @@ ostream& Tournament::display() const{
         }
         
     }else {
+        
         cout <<  "Invalid Tournament";
     }
     
@@ -134,9 +130,12 @@ Tournament::Tournament(const char* name, int noOfteam,const SoccerTeam* soccer)
 
 Tournament::~Tournament()
 {
- //   if(m_name != nullptr) delete[] m_name;
-//    if(m_name != nullptr) delete[] m_name;
-    setEmpty();
+    
+           delete[] m_name;
+        
+           delete[] m_soccer;
+         
+    
 }
 
 

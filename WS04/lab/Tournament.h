@@ -1,7 +1,7 @@
 #ifndef Tournament_hpp
 #define Tournament_hpp
 
-#include <iostream>
+
 #include <stdio.h>
 #include "Soccer.h"
 
@@ -15,8 +15,15 @@ private:
     SoccerTeam* m_soccer = nullptr;//pointer to the dynamically allocated array of soccerTeam
     
 public:
+    void setTournament(const char* name, int noOfteam,const SoccerTeam* soccer);
+    void setEmpty();
+    bool isEmpty() const;
+    Tournament& match(const SoccerTeam* ls);
+    std::ostream& display() const;
     
-    
+    Tournament();
+    Tournament(const char* name, int noOfteam,const SoccerTeam* soccer);
+    ~Tournament();
 };
 
 

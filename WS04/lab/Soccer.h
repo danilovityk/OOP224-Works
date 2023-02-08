@@ -25,6 +25,7 @@ public:
     void setTeam(const SoccerTeam& team);
     void setName(const char* tname);
     void calFines();
+    void increaseGoal();
     std::ostream& display()const;
 
     SoccerTeam();

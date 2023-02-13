@@ -81,18 +81,13 @@ namespace sdds
     {
         int number = 0;
         char choice, buffer[41];
-        bool flag = false;
+        bool flag = true;
         
         cout << "Please enter the name: ";
         
         
-        cin.getline(buffer, 40);
+        cin.getline(buffer, 999);
       
-        
-      
-        
-        
-        
         buffer[40] = '\0';
         
         malloc(buffer);
@@ -103,36 +98,39 @@ namespace sdds
         
         do {
             
-      
-            cin.get(choice);
             
+            cin.get(choice);
             cin.ignore(10000, '\n');
+            
             
             if (choice == 'Y' || choice == 'y')
             {
                 cout << "Please enter a 5 digit phone extension: ";
                 do{
-                    flag = false;
+                    flag = true;
                     cin >> number;
                     if (cin.fail())
                     {
-                        
-                        flag = true;
+                        cin.clear();
+                        cin.ignore(10000, '\n');
+                        flag = false;
                         cout << "Bad integer value, try again: ";
                         
                     }else if (!(10000 <= number && number <= 99999))
                     {
-                        flag = true;
+                        flag = false;
                         cout << "Invalid value [10000<=value<=99999]: ";
                     }
                     
-                }while (flag);
+                }while (!flag);
+                
+                cin.ignore(10000, '\n');
                 
                 m_number = number;
                 
             }else if (choice == 'N' || choice == 'n')
             {
-                
+                m_number = 0;
                 
                 
             }else
@@ -171,12 +169,15 @@ namespace sdds
                 
                 cout << "| ";
                 cout.width(20);
-                if (m_name != 0)
+                if (m_number == 0)
                 {
                     cout << "Extension: N/A";
                 }else
                 {
-                    cout << "Extension: " << m_number;
+                    cout.width(0);
+                    cout << "Extension: ";
+                    cout.width(9);
+                    cout << m_number;
                 }
                 cout << " |" << endl;
                 
@@ -202,12 +203,15 @@ namespace sdds
                 
                 cout << "| ";
                 cout.width(40);
-                if (m_name != 0)
+                if (m_number == 0)
                 {
                     cout << "Extension: N/A";
                 }else
                 {
-                    cout << "Extension: " << m_number;
+                    cout.width(0);
+                    cout << "Extension: ";
+                    cout.width(29);
+                    cout << m_number;
                 }
                 cout << " |" << endl;
                 

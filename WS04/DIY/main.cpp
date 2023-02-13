@@ -2,7 +2,7 @@
 // OOP244 Workshop 4 Part2: Constructor, Destructor and the current object
 // File main.cpp
 // Version 1.0
-// Date	2023/01
+// Date    2023/01
 // Author Fardad Soleimanloo
 // Description
 // Tests NameTag module
@@ -13,12 +13,15 @@
 //
 /////////////////////////////////////////////////////////////////
 ***********************************************************************/
+
 #include <iostream>
-using namespace std;
 #include "NameTag.h"
+
+using namespace std;
 using namespace sdds;
+
 int main() {
-   NameTag nt[6] = {  
+   NameTag nt[6] = {
       "A very very very long name to be cut short!!!", // one argument constructor
       {"Fred Soley", 12345} ,       // two argument constructor with good data
       {nullptr, 23456},    // two argument constructor with bad name
@@ -34,5 +37,7 @@ int main() {
    nt[1].read().print();
    nt[3].read().print();
    nt[5].read().print();
+    
+
    return 0;
 }

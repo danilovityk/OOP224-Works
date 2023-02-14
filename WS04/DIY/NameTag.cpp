@@ -39,7 +39,7 @@ namespace sdds
         clear();
     }
     
-    NameTag::NameTag(char* name)
+    NameTag::NameTag(char name[])
     {
         
         clear();
@@ -51,7 +51,7 @@ namespace sdds
         
     }
 
-    NameTag::NameTag(char* name, int number)
+    NameTag::NameTag(char name[], int number)
     {
         clear();
         

@@ -26,8 +26,8 @@ private:
 public:
     
     NameTag();
-    NameTag(char* name);
-    NameTag(char* name, int number);
+    NameTag(char name[]);
+    NameTag(char name[], int number);
     
     ~NameTag();
     

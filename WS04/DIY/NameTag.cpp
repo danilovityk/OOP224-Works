@@ -7,7 +7,7 @@ using namespace std;
 namespace sdds
 {
     
-    void NameTag::malloc(char* name)
+    void NameTag::malloc(const char* name)
     {
         if(name != nullptr)
         {
@@ -15,7 +15,7 @@ namespace sdds
             if (strlen(name) > 40)
             {
                 m_name = new char[41];
-                strncpy(m_name, name, 40);
+                strcpy(m_name, name);
                 m_name[40] = '\0';
             }else
             {
@@ -39,7 +39,7 @@ namespace sdds
         clear();
     }
     
-    NameTag::NameTag(char name[])
+    NameTag::NameTag(const char* name)
     {
         
         clear();
@@ -51,7 +51,7 @@ namespace sdds
         
     }
 
-    NameTag::NameTag(char name[], int number)
+    NameTag::NameTag(const char* name, int number)
     {
         clear();
         

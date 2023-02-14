@@ -19,15 +19,15 @@ private:
     char* m_name;
     int m_number;
     
-    void malloc(char* name);
+    void malloc(const char* name);
     void clear();
     
     
 public:
     
     NameTag();
-    NameTag(char name[]);
-    NameTag(char name[], int number);
+    NameTag(const char* name);
+    NameTag(const char* name, int number);
     
     ~NameTag();
     

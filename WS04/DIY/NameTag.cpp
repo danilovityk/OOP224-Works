@@ -1,3 +1,17 @@
+/*
+ *         Name: Danylo Vityk
+ *         Email: dvityk@myseneca.ca
+ *         Sudent ID: 176326213
+ *         Date: Feb 14, 2023
+ *
+ *
+ *         I have done all the coding by myself and only copied the code that my professor provided to complete 
+ *         my workshops and assignments.
+ *
+ *
+ */
+
+
 #include <iostream>
 #include <cstring>
 #include "NameTag.h"
@@ -11,18 +25,18 @@ namespace sdds
     {
         if(name != nullptr)
         {
-            
+	    delete[] m_name;            
             if (strlen(name) > 40)
             {
                 m_name = new char[41];
-                strcpy(m_name, name);
+                strncpy(m_name, name, 40);
                 m_name[40] = '\0';
             }else
             {
-                m_name = new char[strlen(name + 1)];
+                m_name = new char[strlen(name) + 1];
                 strcpy(m_name, name);
                 
-                m_name[40] = '\0';
+                m_name[strlen(name)] = '\0';
             }
         
         }
@@ -135,7 +149,7 @@ namespace sdds
                 
             }else
             {
-                cout << "Only (Y) or (N) are acceptable, try agin: ";
+                cout << "Only (Y) or (N) are acceptable, try again: ";
             }
             
         }while(choice != 'Y' && choice != 'y' && choice != 'N' && choice != 'n');

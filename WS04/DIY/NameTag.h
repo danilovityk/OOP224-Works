@@ -1,9 +1,15 @@
-//
-//  NameTag.hpp
-//  W4P2
-//
-//  Created by Danik on 09.02.2023.
-//
+/*
+ *         Name: Danylo Vityk
+ *         Email: dvityk@myseneca.ca
+ *         Sudent ID: 176326213
+ *         Date: Feb 14, 2023
+ *
+ *
+ *         I have done all the coding by myself and only copied the code that my professor provided to complete my workshops 
+ *         and assignments.
+ *
+ *
+ */
 
 #ifndef NameTag_h
 #define NameTag_h

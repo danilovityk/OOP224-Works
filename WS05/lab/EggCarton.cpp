@@ -224,7 +224,7 @@ int operator+(int left, const EggCarton& right)
     
     if(right)
     {
-        returnValue = left + right;
+        returnValue = left + (int)right;
     }else
     {
         returnValue = left;

@@ -149,6 +149,7 @@ Bus& Bus::operator=(int value)
     if (value < m_numOfSeats)
         m_numOfPassangers = value;
     
+    validateInput();
     
     return *this;
 }

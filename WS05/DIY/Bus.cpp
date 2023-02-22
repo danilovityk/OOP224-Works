@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "Bus.h"
 
 using namespace std;
@@ -47,10 +48,13 @@ void Bus::drawBus(int seats, int noOfPassengers, ostream& ostr) const
 
 std::ostream& operator<<(std::ostream& ostr, const Bus& bus)
 {
+    
     if(bus)
     {
         bus.drawBus(bus.m_numOfSeats, bus.m_numOfPassangers, ostr);
-        ostr << "Total Fare Price: " << (double)bus << endl;
+        ostr << "Total Fare Price: " << (double)bus;
+        if ((double)bus == 0) ostr << ".00";
+        ostr << endl;
     }else
     {
         ostr << "Out of service!" << endl;

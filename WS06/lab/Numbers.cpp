@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include <iomanip>
 #include "Numbers.h"
 using namespace std;

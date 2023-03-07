@@ -31,7 +31,8 @@ namespace sdds {
 
     Numbers::Numbers (char* filename)
     {
-        if(!filename){
+        setEmpty();
+        if(filename){
             strcpy(m_filename, filename);
             load();
         }
@@ -48,18 +49,19 @@ Numbers::~Numbers() {
 Numbers::Numbers(const sdds::Numbers &numbers) { 
     this->setEmpty();
     *this = numbers;
+ 
     
 }
 
-sdds::Numbers Numbers::operator=(const sdds::Numbers &rOp) { 
+sdds::Numbers& Numbers::operator=(const sdds::Numbers &rOp) { 
     if(*this != rOp)
     {
         save();
         delete[] m_collection;
-        setEmpty();
+        this->setEmpty();
         if (rOp)
         {
-            
+            strcpy(m_filename, rOp.m_filename);
             m_original = false;
             m_collection = new double[rOp.m_collectionSize];
             for(int i = 0; i < rOp.m_collectionSize; i++)
@@ -100,14 +102,17 @@ std::ostream &Numbers::display(std::ostream &ostr) const {
     if(*this)
     {
         ostr<<fixed<<setprecision(2);
-        if (!m_original) ostr<<"Copy Of "<<m_filename<<endl;
+        if (!m_original) ostr<<"Copy Of ";
+        ostr<< m_filename <<endl;
         for(int i = 0; i < m_collectionSize; i++)
         {
             ostr<<m_collection[i];
+            if(i+1 != m_collectionSize) ostr<<", ";
         }
-        ostr<<endl << setfill('-') << setw(76);
+        ostr<<endl << string(76, '-') << endl;
+        
         ostr<<"Total of "<< m_collectionSize << " number(s), Largest: " << max() <<", Smallest: " << min() << ", Average: " << average()<<endl;
-        ostr<<endl << setfill('=') << setw(76);
+        ostr << string(76, '=');
         
     }else
     {
@@ -128,7 +133,8 @@ void Numbers::setEmpty() {
 bool Numbers::load() {
     unsigned int readLinesCount = countLines(m_filename);
     
-    delete[] m_collection;
+    if(m_collection != nullptr)
+        delete[] m_collection;
     if(readLinesCount > 0)
     {
         unsigned int size = 0;
@@ -208,7 +214,7 @@ double Numbers::average() const {
 }
 
 
-istream& operator>>(istream istr, Numbers& right)
+istream& operator>>(istream& istr, Numbers& right)
 {
     double temp = 0;
     istr >> temp;
@@ -216,7 +222,7 @@ istream& operator>>(istream istr, Numbers& right)
 
     return istr;
 }
-ostream& operator<<(ostream ostr, const Numbers& right)
+ostream& operator<<(ostream& ostr, const Numbers& right)
 {
    return  right.display(ostr);;
 }

@@ -27,7 +27,7 @@ namespace sdds {
        Numbers();
        ~Numbers();
        Numbers(const Numbers &numbers);
-       Numbers operator=(const Numbers& rOp);
+       Numbers& operator=(const Numbers& rOp);
        operator bool() const;
        void sort();
        Numbers operator+=(const double rOp);
@@ -38,8 +38,8 @@ namespace sdds {
     
    };
 
-std::istream& operator>>(std::istream istr, Numbers& right);
-std::ostream& operator<<(std::ostream ostr, const Numbers& right);
+std::istream& operator>>(std::istream& istr, Numbers& right);
+std::ostream& operator<<(std::ostream& ostr, const Numbers& right);
 
 }
 #endif // !SDDS_NUMBERS_H_

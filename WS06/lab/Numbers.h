@@ -23,7 +23,7 @@ namespace sdds {
        
    public:
        
-       Numbers (char* filename);
+       Numbers (const char filename[]);
        Numbers();
        ~Numbers();
        Numbers(const Numbers &numbers);

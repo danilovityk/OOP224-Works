@@ -29,7 +29,7 @@ namespace sdds {
       return lines;
    }
 
-    Numbers::Numbers (char* filename)
+    Numbers::Numbers (const char filename[])
     {
         setEmpty();
         if(filename){
@@ -42,7 +42,7 @@ Numbers::Numbers() {
     setEmpty();
 }
 Numbers::~Numbers() {
-    save();
+    //save();
     delete[] m_collection;
 }
 
@@ -64,7 +64,7 @@ sdds::Numbers& Numbers::operator=(const sdds::Numbers &rOp) {
             strcpy(m_filename, rOp.m_filename);
             m_original = false;
             m_collection = new double[rOp.m_collectionSize];
-            for(int i = 0; i < rOp.m_collectionSize; i++)
+            for(unsigned int i = 0; i < rOp.m_collectionSize; i++)
             {
                 m_collection[i] = rOp.m_collection[i];
             }
@@ -87,7 +87,7 @@ sdds::Numbers Numbers::operator+=(const double rOp) {
     if(*this)
     {
         double *temp = new double[m_collectionSize + 1];
-        for (int i = 0; i < m_collectionSize; i++){
+        for (unsigned int i = 0; i < m_collectionSize; i++){
             temp[i] = m_collection[i];
         }
         temp[m_collectionSize] = rOp;
@@ -104,7 +104,7 @@ std::ostream &Numbers::display(std::ostream &ostr) const {
         ostr<<fixed<<setprecision(2);
         if (!m_original) ostr<<"Copy Of ";
         ostr<< m_filename <<endl;
-        for(int i = 0; i < m_collectionSize; i++)
+        for(unsigned int i = 0; i < m_collectionSize; i++)
         {
             ostr<<m_collection[i];
             if(i+1 != m_collectionSize) ostr<<", ";
@@ -173,7 +173,7 @@ void Numbers::save() {
         
         file << fixed << setprecision(2);
         
-        for(int i = 0; i < m_collectionSize; i++){
+        for(unsigned int i = 0; i < m_collectionSize; i++){
             file << m_collection[i] << endl;
         }
         
@@ -184,7 +184,7 @@ void Numbers::save() {
 double Numbers::max() const {
     
     double max = m_collection[0];
-    for (int i = 1; i < m_collectionSize; i ++)
+    for (unsigned int i = 1; i < m_collectionSize; i ++)
     {
         if(max < m_collection[i]){
             max = m_collection[i];
@@ -195,7 +195,7 @@ double Numbers::max() const {
 
 double Numbers::min() const {
     double min = m_collection[0];
-    for (int i = 1; i < m_collectionSize; i ++)
+    for (unsigned int i = 1; i < m_collectionSize; i ++)
     {
         if(min > m_collection[i]){
             min = m_collection[i];
@@ -206,7 +206,7 @@ double Numbers::min() const {
 
 double Numbers::average() const {
     double total = 0;
-    for (int i = 0; i < m_collectionSize; i ++)
+    for (unsigned int i = 0; i < m_collectionSize; i ++)
     {
         total += m_collection[i];
     }
@@ -217,7 +217,9 @@ double Numbers::average() const {
 istream& operator>>(istream& istr, Numbers& right)
 {
     double temp = 0;
-    istr >> temp;
+    if(istr){
+        istr >> temp;
+    }
     right += temp;
 
     return istr;

@@ -156,7 +156,7 @@ bool Numbers::load() {
         
         if (size != readLinesCount)
         {
-            cout<<"\n\nWRONG SIZE OF LOAD\n\n";
+           // cout<<"\n\nWRONG SIZE OF LOAD\n\n";
             delete[] m_collection;
             setEmpty();
         }

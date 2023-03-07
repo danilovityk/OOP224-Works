@@ -103,7 +103,8 @@ std::ostream &Numbers::display(std::ostream &ostr) const {
     if(*this)
     {
         ostr<<fixed<<setprecision(2);
-        if (!m_original) ostr<<"Copy Of ";
+        if (!m_original) ostr<<"Copy of ";
+
         ostr<< m_filename <<endl;
         for(unsigned int i = 0; i < m_collectionSize; i++)
         {

@@ -226,7 +226,7 @@ istream& operator>>(istream& istr, Numbers& right)
 {
     double temp = 0;
    
-    istr >> temp;
+    istr >> temp;
     
     right += temp;
     

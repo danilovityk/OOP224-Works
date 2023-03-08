@@ -16,7 +16,7 @@ void SoccerTeam::setTeam(const SoccerTeam& team)
 
 void SoccerTeam::setName(const char* tname)
 {
-    if (tname != nullptr & tname[0] != '\0')
+    if (tname != nullptr && tname[0] != '\0')
     {
         strcpy(m_teamName, tname);
     }else{

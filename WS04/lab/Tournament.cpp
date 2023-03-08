@@ -81,7 +81,7 @@ ostream& Tournament::display() const{
     
     if (isEmpty()){
         
-        cout << "Tournament name : " << m_name << endl;
+        cout << "Tournament name: " << m_name << endl;
         cout << "list of the teams" << endl;
         
         cout.unsetf(ios::left);

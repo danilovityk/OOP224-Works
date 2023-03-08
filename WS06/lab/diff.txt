@@ -1,14 +1,14 @@
-In line number 60 of your output:
+In line number 106 of your output:
 The output should be:
-Copy of numbers.txt
+-5.00<\n>-1.50<\n>1.30<\n>3.20<\n>6.20<\n>12.20<\n>34.10<\n>40.10<\n>222.10<\n>333.20<\n>
 ^
 But your output is: 
-numbers.txt
+6.20<\n>12.20<\n>3.20<\n>34.10<\n>1.30<\n>40.10<\n>-1.50<\n>
 ^
 
 Unmatched character details:
 The character in column 1 is supposed to be:
-  [C] ASCII code(67)
+  [-] ASCII code(45)
 but you printed
-  [n] ASCII code(110)
+  [6] ASCII code(54)
 

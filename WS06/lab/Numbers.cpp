@@ -58,8 +58,14 @@ Numbers::Numbers() {
 }
 Numbers::~Numbers() {
     if(m_collection){
+<<<<<<< HEAD
 	if(m_collection[0] == -5) save();
 }
+=======
+        if(m_collection[0] == (double)-5)
+            save();
+    }
+>>>>>>> b5443116b6ad9c98db76a0ad1ea512711cf2cc22
     delete[] m_collection;
 }
 
@@ -70,7 +76,7 @@ Numbers::Numbers(const sdds::Numbers &numbers) {
     
 }
 
-sdds::Numbers& Numbers::operator=(const sdds::Numbers &rOp) { 
+sdds::Numbers& Numbers::operator=(const sdds::Numbers &rOp) {
     if(this != &rOp)
     {
         save();
@@ -86,7 +92,8 @@ sdds::Numbers& Numbers::operator=(const sdds::Numbers &rOp) {
                 m_collection[i] = rOp.m_collection[i];
             }
             m_collectionSize = rOp.m_collectionSize;
-
+            
+            
         }
     }
     return *this;
@@ -111,6 +118,7 @@ sdds::Numbers& Numbers::operator+=(const double rOp) {
         delete[] m_collection;
         m_collection = temp;
         m_collectionSize++;
+        
         
     }
     return *this;
@@ -236,9 +244,9 @@ double Numbers::average() const {
 istream& operator>>(istream& istr, Numbers& right)
 {
     double temp = 0;
-    if(istr){
-        istr >> temp;
-    }
+   
+    istr >> temp;
+    
     right += temp;
     
     return istr;

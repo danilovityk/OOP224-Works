@@ -1,3 +1,17 @@
+/*
+ *  *         Name: Danylo Vityk
+ *   *         Email: dvityk@myseneca.ca
+ *    *         Sudent ID: 176326213
+ *     *         Date: Feb 21, 2023
+ *      *
+ *       *
+ *        *         I have done all the coding by myself and only copied the code that my professor provided to complete my workshops
+ *         *         and assignments.
+ *          *
+ *           *
+ *           
+ *
+ *           */
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -43,7 +57,9 @@ Numbers::Numbers() {
     setEmpty();
 }
 Numbers::~Numbers() {
-    //save();
+    if(m_collection){
+	if(m_collection[0] == -5) save();
+}
     delete[] m_collection;
 }
 
@@ -84,7 +100,7 @@ void Numbers::sort() {
     sort(m_collection, m_collectionSize);
 }
 
-sdds::Numbers Numbers::operator+=(const double rOp) {
+sdds::Numbers& Numbers::operator+=(const double rOp) {
     if(*this)
     {
         double *temp = new double[m_collectionSize + 1];

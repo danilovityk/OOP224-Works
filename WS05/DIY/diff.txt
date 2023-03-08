@@ -1,0 +1,14 @@
+In line number 108 of your output:
+The output should be:
+b1: -1
+    ^
+But your output is: 
+b1: 2
+    ^
+
+Unmatched character details:
+The character in column 5 is supposed to be:
+  [-] ASCII code(45)
+but you printed
+  [2] ASCII code(50)
+

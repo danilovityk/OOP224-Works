@@ -1,0 +1,14 @@
+/*
+        Name: Danylo Vityk
+        Email: dvityk@myseneca.ca
+        Sudent ID: 176326213
+        Date: Feb 14, 2023
+
+
+ I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+
+*/
+
+The hardest for me thing in this workshop was dealing with git.ignore function as i was getting infinitive loop after any input with
+spaces. I also had a memory leak, but that was just my minor mistake and i got it fixed in a couple of minutes.  

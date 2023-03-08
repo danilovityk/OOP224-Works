@@ -1,9 +1,9 @@
-Script started on Sun 05 Feb 2023 12:31:05 PM EST
-==92751== Memcheck, a memory error detector
-==92751== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==92751== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==92751== Command: ws.exe
-==92751== 
+Script started on Tue 07 Feb 2023 09:24:09 PM EST
+==219540== Memcheck, a memory error detector
+==219540== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==219540== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==219540== Command: ws.exe
+==219540== 
 -----------------------------------------------------------------
 |> T1: Checking Constructors of Soccer Team
 -----------------------------------------------------------------
@@ -55,13 +55,13 @@ list of the teams
                                         Fines     Fouls     Goals
 Team[1] :Scarborough Soccer Team         0.00     0         3w
 Team[2] :Invalid Team
-==92751== 
-==92751== HEAP SUMMARY:
-==92751==     in use at exit: 0 bytes in 0 blocks
-==92751==   total heap usage: 3 allocs, 3 frees, 72,850 bytes allocated
-==92751== 
-==92751== All heap blocks were freed -- no leaks are possible
-==92751== 
-==92751== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==219540== 
+==219540== HEAP SUMMARY:
+==219540==     in use at exit: 0 bytes in 0 blocks
+==219540==   total heap usage: 3 allocs, 3 frees, 72,850 bytes allocated
+==219540== 
+==219540== All heap blocks were freed -- no leaks are possible
+==219540== 
+==219540== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
-Script done on Sun 05 Feb 2023 12:31:06 PM EST
+Script done on Tue 07 Feb 2023 09:24:10 PM EST

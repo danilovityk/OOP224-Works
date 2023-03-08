@@ -1,0 +1,15 @@
+/*
+ *         Name: Danylo Vityk
+ *         Email: dvityk@myseneca.ca
+ *         Sudent ID: 176326213
+ *         Date: Mar 8, 2023
+ *
+ *
+ *         I have done all the coding by myself and only copied the code that my professor provided to complete my workshops
+ *         and assignments.
+ *
+ *
+ */
+
+The hardest part in this workshop was fixing the bugs related to memory leaks and fixing the warning which were displayed beacuse of
+inmplicit castings of several variables. Everything else was pretty easy.

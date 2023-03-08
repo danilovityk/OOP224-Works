@@ -1,0 +1,21 @@
+/*
+ *         Name: Danylo Vityk
+ *         Email: dvityk@myseneca.ca
+ *         Sudent ID: 176326213
+ *         Date: Feb 21, 2023
+ *
+ *
+ *         I have done all the coding by myself and only copied the code that my professor provided to complete my workshops 
+ *         and assignments.
+ *
+ *
+ */
+
+
+I have been fine throughout the workshop, and it was pretty easy to complete for me.
+The explanations of the ideas were straightforward, and the readme.md provided was clear. 
+I actually got some practice with operators overloading and that was pretty interesting 
+(and i'm not writing random text, that was actually interesting:) ).
+
+
+

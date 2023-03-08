@@ -55,7 +55,7 @@ Numbers::Numbers(const sdds::Numbers &numbers) {
 }
 
 sdds::Numbers& Numbers::operator=(const sdds::Numbers &rOp) { 
-    if(*this != rOp)
+    if(this != &rOp)
     {
         save();
         delete[] m_collection;
@@ -95,6 +95,7 @@ sdds::Numbers Numbers::operator+=(const double rOp) {
         delete[] m_collection;
         m_collection = temp;
         m_collectionSize++;
+        
     }
     return *this;
 }
@@ -223,7 +224,7 @@ istream& operator>>(istream& istr, Numbers& right)
         istr >> temp;
     }
     right += temp;
-
+    
     return istr;
 }
 ostream& operator<<(ostream& ostr, const Numbers& right)

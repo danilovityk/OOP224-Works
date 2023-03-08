@@ -86,7 +86,7 @@ void test3() {
    startTest("In this test we use your insertion and extraction operators to do\n"
              "File IO. This makes sure your implementation is done correctly\n"
              "using the reference of istream and ostream and NOT cin and cout");
-   ifstream addnum("add.txt");
+   ifstream addnum("/Users/danilovityk/Documents/OOP244/OOP-Workshops/WS06/lab/add.txt");
    ofstream output("output.txt");
    Numbers N("numbers.txt");
    addnum >> N;

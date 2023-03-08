@@ -30,7 +30,7 @@ namespace sdds {
        Numbers& operator=(const Numbers& rOp);
        operator bool() const;
        void sort();
-       Numbers operator+=(const double rOp);
+       Numbers& operator+=(const double rOp);
        std::ostream& display(std::ostream& ostr = std::cout) const;
        
        

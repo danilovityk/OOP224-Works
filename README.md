@@ -368,7 +368,7 @@ The Error message should be able to be inserted into an ostream object using the
 ### Other Methods and operation
 Implement and add any other method or operations you find necessary to accomplish the above tasks (make them private if they don't need to be publicly accessible)
 
-## the Date of class
+## the Date class
 ### attributes
 - The date class encapsulates date and time properties in five integer attributes (year, month, day, hour and minute).
 - Date also has a flag for using date only (no hour or minutes)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #########################
 # .gitignore file for Xcode4 and Xcode5 Source projects
 #
@@ -217,6 +218,23 @@ xcuserdata/
 ####
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
+=======
+# ignore files with no extenion
+*
+!*.*
+!*/
+
+# Visual Studio
+*.sdf
+*.user
+*.suo
+*.opensdf
+*.db
+Debug/
+ipch/
+x64/
+.vs/
+>>>>>>> project/main
 
 #tempfiles
 ~$_*.*
@@ -258,8 +276,11 @@ Debug/
 *.exe
 *.out
 *.app
+<<<<<<< HEAD
 
 # Other
 
 *.DS_Store
 *.xcodeproj
+=======
+>>>>>>> project/main

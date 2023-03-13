@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #########################
 # .gitignore file for Xcode4 and Xcode5 Source projects
 #
@@ -219,6 +220,8 @@ xcuserdata/
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
 =======
+=======
+>>>>>>> proj/main
 # ignore files with no extenion
 *
 !*.*
@@ -234,7 +237,10 @@ Debug/
 ipch/
 x64/
 .vs/
+<<<<<<< HEAD
 >>>>>>> project/main
+=======
+>>>>>>> proj/main
 
 #tempfiles
 ~$_*.*
@@ -277,6 +283,7 @@ Debug/
 *.out
 *.app
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # Other
 
@@ -284,3 +291,5 @@ Debug/
 *.xcodeproj
 =======
 >>>>>>> project/main
+=======
+>>>>>>> proj/main

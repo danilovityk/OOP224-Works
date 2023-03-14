@@ -54,7 +54,7 @@ void Dog::walk(){
 }
 
 std::ostream& Dog::outputData(std::ostream& os){
-    cout << "Walks: " << m_numWalks << endl;
+    cout << "   Walks: " << m_numWalks << endl;
     Pet::outputData(os);
     
     return os;

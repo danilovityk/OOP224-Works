@@ -25,8 +25,9 @@ public:
     Dog& operator=(const Dog& rhs);
     void walk();
     std::ostream& outputData(std::ostream& os);
+    
 };
-
+std::ostream& operator<<(std::ostream& os, Dog& dog);
 }
 
 #endif

@@ -55,12 +55,6 @@ std::ostream& operator<<(std::ostream& os, Fish& fish){
 }
 
 
-
-
-
-
-
-    
 }
 
 

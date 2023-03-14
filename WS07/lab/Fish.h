@@ -21,6 +21,8 @@ public:
     void reSpawn();
     void operator++(int num);
     Fish& operator=(const Fish& rhs);
+    std::ostream& outputData(std::ostream& os);
+
 };
 
 std::ostream& operator<<(std::ostream& os, Fish& fish);

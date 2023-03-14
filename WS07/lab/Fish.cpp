@@ -41,8 +41,14 @@ sdds::Fish &Fish::operator=(const sdds::Fish &rhs) {
     
 }
 
+std::ostream& Fish::outputData(std::ostream& os){
+    Pet::outputData(os);
+    
+    return os;
+}
+
 std::ostream& operator<<(std::ostream& os, Fish& fish){
-    os << "** Generic Fish **" << endl;
+    os << "** Generic Dog **" << endl;
     fish.outputData(os);
     
     return os;

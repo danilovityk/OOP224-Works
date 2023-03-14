@@ -21,10 +21,7 @@ namespace sdds
 {
 	class Pet
 	{
-		const double COST_BASE		= 1.00;		// Fee: Initial purchase
-		const double COST_FEED		= 0.00;		// Fee: For each feeding
-		const double COST_REVIVE	= 0.25;		// Fee: Respawn if perished
-
+		
 		static const int MAXLEN_PETNAME = 20;
 
 		char	m_Name[MAXLEN_PETNAME];
@@ -46,6 +43,11 @@ namespace sdds
 		int getFeeds();
 		int getGrooms();
 		int getHugs();
+        
+        const double COST_BASE        = 1.00;        // Fee: Initial purchase
+        const double COST_FEED        = 0.00;        // Fee: For each feeding
+        const double COST_REVIVE    = 0.25;        // Fee: Respawn if perished
+
 
 	public:
 		Pet();

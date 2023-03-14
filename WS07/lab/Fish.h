@@ -7,7 +7,7 @@
 namespace sdds
 {
 
-class Fish : Pet {
+class Fish : public Pet {
   
 private:
     const double COST_FISH        = 2.00;        // Fee: Initial purchase

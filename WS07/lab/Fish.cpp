@@ -48,7 +48,7 @@ std::ostream& Fish::outputData(std::ostream& os){
 }
 
 std::ostream& operator<<(std::ostream& os, Fish& fish){
-    os << "** Generic Dog **" << endl;
+    os << "** Generic Fish **" << endl;
     fish.outputData(os);
     
     return os;

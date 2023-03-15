@@ -4,13 +4,13 @@
 using namespace std;
 namespace sdds{
 
-Dog::Dog(const char *name, int age, int numWalks) : Pet::Pet(name, age, COST_CREATION), m_numWalks(numWalks){}
+Dog::Dog(const char *name, int age, int numWalks) : Pet::Pet(name, age, COST_BASE), m_numWalks(numWalks){}
 
 void Dog::feed(){
     
     Pet::feed();
     if(isAlive()){
-        addCharge(COST_DOG);
+        addCharge(COST_FEED);
         
     }
 }
@@ -35,12 +35,13 @@ void Dog::operator++(int num) {
     }
     
     Pet::operator++(num);
+    m_numWalks = 0;
 }
 
 sdds::Dog &Dog::operator=(const sdds::Dog &rhs) {
     if(this != &rhs){
         Pet::operator=(rhs);
-        addCharge(COST_CREATION * 2);
+        addCharge(COST_DOG * 2);
         m_numWalks = rhs.m_numWalks;
     }
     return *this;
@@ -68,11 +69,6 @@ std::ostream& operator<<(std::ostream& os, Dog& dog){
 }
 
 
-
-
-
-
-    
 }
 
 

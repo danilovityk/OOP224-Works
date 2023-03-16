@@ -16,7 +16,7 @@ public:
     Error& operator=(const Error& errorObj);
     Error& operator=(const char* errorType);
     
-    operator bool();
+    operator bool() const;
     Error& clear();
     ~Error();
     

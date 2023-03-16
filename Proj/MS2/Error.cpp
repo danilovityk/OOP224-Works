@@ -55,6 +55,19 @@ Error::~Error() {
 
 }
 
+char* Error::getErrorMessage() const{
+   // if (m_errorType){
+        return m_errorType;
+   // }
+}
 
+std::ostream& operator<<(std::ostream &ostr, const Error& error)
+{
+    if (error){
+        ostr << error.getErrorMessage();
+    }
+    
+    return ostr;
+}
 
 }

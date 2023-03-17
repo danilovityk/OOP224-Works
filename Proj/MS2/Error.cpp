@@ -31,7 +31,6 @@ Error& Error::operator=(const Error& errorObj) {
 
 Error& Error::operator=(const char *errorType) {
     if(errorType != nullptr){
-        delete[] m_errorType;
         int size = (int)strlen(errorType);
         m_errorType = new char [size + 1];
         m_errorType[size] = '\0';

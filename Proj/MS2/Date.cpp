@@ -148,12 +148,12 @@ std::ostream& Date::display(std::ostream& ostr) const
             ostr << m_year << "/" << m_month << "/" << m_day << std::endl;
         }else
         {
-            ostr << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << std::endl;
+            ostr << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute;
         }
         
     }else
     {
-        ostr << m_error << "(" << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << ")" << std::endl;
+        ostr << m_error << "(" << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << ")";
     }
     
     return ostr;

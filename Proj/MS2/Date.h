@@ -17,7 +17,7 @@ private:
 public:
 
     void getSystemDate(int& year, int& mon, int& day, int& hour, int& min, bool dateOnly);
-    int uniqueDateValue(int year, int mon, int day, int hour, int min);
+    int uniqueDateValue(int year, int mon, int day, int hour, int min) const;
     int daysOfMonth(int year, int month);
     void validateDate();
     
@@ -30,11 +30,15 @@ public:
     
     Date();
     Date(const int& year, const int& month, const int& day);
-    Date(const int& year, const int& month, const int& day, const int& hour, const int& minute);
+    Date(const int& year, const int& month, const int& day, const int& hour, const int& minute = 0);
     
     Date& dateOnly(bool dateOnly);
     operator bool() const;
-    Error& error() const;
+    const Error& error() const;
+
+    std::ostream& display(std::ostream& ostr) const;
+    std::istream& read(std::istream& istr);
+    
 };
 
 std::ostream& operator<<(std::ostream& ostr,const Date& date);

@@ -19,7 +19,7 @@ void Date::getSystemDate(int &year, int &mon, int &day, int &hour, int &min, boo
           }
 }
 
-int Date::uniqueDateValue(int year, int mon, int day, int hour, int min) {
+int Date::uniqueDateValue(int year, int mon, int day, int hour, int min) const{
     
     return year * 535680 + mon * 44640 + day * 1440 + hour * 60 + min;
     
@@ -93,40 +93,101 @@ Date::Date(const int &year, const int &month, const int &day, const int &hour, c
 }
 
 bool Date::operator==(const sdds::Date &date) const {
-    <#code#>;
+    return (uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute)) == (uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute));
 }
 
 bool Date::operator!=(const sdds::Date &date) const {
-    <#code#>;
+    return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) != uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
 }
 
 bool Date::operator<(const sdds::Date &date) const {
-    <#code#>;
+    return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) < uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
 }
 
 bool Date::operator>(const sdds::Date &date) const {
-    <#code#>;
+    return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) > uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
 }
 
 bool Date::operator<=(const sdds::Date &date) const {
-    <#code#>;
+    return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) <= uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
 }
 
 bool Date::operator>=(const sdds::Date &date) const {
-    <#code#>;
+    return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) >= uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
 }
 
 
-sdds::Date &Date::dateOnly(bool dateOnly) {
-    <#code#>;
+Date& Date::dateOnly(bool dateOnly) {
+    m_dateOnly = dateOnly;
+    
+    if(dateOnly == true)
+    {
+        m_hour = 0;
+        m_minute = 0;
+    }
+    
+    return *this;
 }
 
 Date::operator bool() const {
-    <#code#>;
+    return !m_error;
 }
 
-sdds::Error &Date::error() const {
-    <#code#>;
+const Error &Date::error() const {
+    return m_error;
+}
+
+
+
+std::ostream& Date::display(std::ostream& ostr) const
+{
+    if(*this){
+        
+        if (m_dateOnly)
+        {
+            ostr << m_year << "/" << m_month << "/" << m_day << std::endl;
+        }else
+        {
+            ostr << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << std::endl;
+        }
+        
+    }else
+    {
+        ostr << m_error << "(" << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << ")" << std::endl;
+    }
+    
+    return ostr;
+}
+
+
+std::istream& Date::read(std::istream& istr){
+    
+    m_error.clear();
+    
+    istr >> m_year;
+    istr.ignore();
+    istr >> m_month;
+    istr.ignore();
+    istr >> m_day;
+    
+    istr.ignore();
+    istr >> m_hour;
+    istr.ignore();
+    istr >> m_minute;
+    
+    
+    return istr;
+}
+
+
+std::ostream& operator<<(std::ostream& ostr,const Date& date)
+{
+    return date.display(ostr);
+}
+
+std::istream& operator>>(std::istream& istr, Date& date){
+    date.read(istr);
+    return istr;
 }
 
 

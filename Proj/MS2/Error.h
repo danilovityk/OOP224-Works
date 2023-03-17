@@ -16,14 +16,15 @@ public:
     Error& operator=(const Error& errorObj);
     Error& operator=(const char* errorType);
     
-    operator bool();
+    char* getErrorMessage() const;
+    operator bool() const;
     Error& clear();
     ~Error();
     
     
 };
 
-std::ostream& operator<<(std::ostream&, const Error&);
+std::ostream& operator<<(std::ostream& ostr, const Error& error);
 
 }
 

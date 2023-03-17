@@ -52,6 +52,8 @@ public:
     std::ostream& display(std::ostream& ostr) const;
     std::istream& read(std::istream& istr);
     
+    void clearDate();
+    
 };
 
 std::ostream& operator<<(std::ostream& ostr,const Date& date);

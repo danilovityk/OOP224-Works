@@ -25,6 +25,7 @@ Error::Error() {
 }
 
 Error::Error(const char *errorType) {
+    m_errorType = nullptr;
     *this = errorType;
 }
 
@@ -34,20 +35,19 @@ Error& Error::operator=(const Error& errorObj) {
         delete[] m_errorType;
         int size = (int)strlen(errorObj.m_errorType);
         m_errorType = new char [size + 1];
-        m_errorType[size] = '\0';
         strcpy(m_errorType, errorObj.m_errorType);
-    
-        
-    };
+        m_errorType[size] = '\0';
+    }
     return *this;
     }
 
 Error& Error::operator=(const char *errorType) {
     if(errorType != nullptr){
+        delete[] m_errorType;
         int size = (int)strlen(errorType);
         m_errorType = new char [size + 1];
-        m_errorType[size] = '\0';
         strcpy(m_errorType, errorType);
+        m_errorType[size] = '\0';
     }
     return *this;
 }

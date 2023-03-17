@@ -182,7 +182,7 @@ std::istream& Date::read(std::istream& istr){
 //    if (!cin.fail()){
 //        m_dateOnly = false;
 //    }else {m_dateOnly = true;}
-
+//
     validateDate();
     
     return istr;

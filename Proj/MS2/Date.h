@@ -31,9 +31,14 @@ public:
     Date(const int& year, const int& month, const int& day);
     Date(const int& year, const int& month, const int& day, const int& hour, const int& minute);
     
-    
-    
+    Date& dateOnly(bool dateOnly);
+    operator bool() const;
+    Error& error() const;
 };
+
+std::ostream& operator<<(std::ostream& ostr,const Date& date);
+std::istream& operator>>(std::istream& istr, Date& date);
+
 
 }
 

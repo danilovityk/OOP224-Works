@@ -2,6 +2,7 @@
 #define DATE_H
 #include <ctime>
 #include "Error.h"
+#include "POS.h"
 
 namespace sdds {
 

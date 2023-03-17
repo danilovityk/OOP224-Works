@@ -35,7 +35,61 @@ int Date::daysOfMonth(int year, int month) {
 }
 
 void Date::validateDate() {
-    <#code#>;
+    if (m_year >= MIN_YEAR && m_year <= MAX_YEAR)
+    {
+        if(m_month >= 1 && m_month <= 12)
+        {
+            if(m_day >= 1 && m_day <= daysOfMonth(m_year, m_month))
+            {
+                if(m_hour >= 0 && m_hour <= 23)
+                {
+                    if(m_minute >= 0 && m_minute <= 59)
+                    {
+                        
+                    }else
+                    {
+                        m_error = "Invalid Minute";
+                    }
+                }else
+                {
+                    m_error = "Invalid Hour";
+                }
+            }else
+            {
+                m_error = "Invalid Day";
+            }
+        }else
+        {
+            m_error = "Invalid Month";
+        }
+    }else
+    {
+        m_error = "Invalid Year";
+    }
+}
+
+
+Date::Date() {
+    m_dateOnly = false;
+    getSystemDate(m_year, m_month, m_day, m_hour, m_minute, false);
+}
+
+Date::Date(const int &year, const int &month, const int &day) {
+    m_year = year;
+    m_month = month;
+    m_day = day;
+    m_dateOnly = true;
+    validateDate();
+}
+
+Date::Date(const int &year, const int &month, const int &day, const int &hour, const int &minute) {
+    m_year = year;
+    m_month = month;
+    m_day = day;
+    m_dateOnly = false;
+    m_hour = hour;
+    m_minute = minute;
+    validateDate();
 }
 
 bool Date::operator==(const sdds::Date &date) const {
@@ -62,17 +116,6 @@ bool Date::operator>=(const sdds::Date &date) const {
     <#code#>;
 }
 
-Date::Date() {
-    <#code#>;
-}
-
-Date::Date(const int &year, const int &month, const int &day) {
-    <#code#>;
-}
-
-Date::Date(const int &year, const int &month, const int &day, const int &hour, const int &minute) {
-    <#code#>;
-}
 
 sdds::Date &Date::dateOnly(bool dateOnly) {
     <#code#>;

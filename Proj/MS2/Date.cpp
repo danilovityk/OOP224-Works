@@ -79,6 +79,8 @@ Date::Date(const int &year, const int &month, const int &day) {
     m_month = month;
     m_day = day;
     m_dateOnly = true;
+    m_hour = 0;
+    m_minute = 0;
     validateDate();
 }
 
@@ -170,11 +172,18 @@ std::istream& Date::read(std::istream& istr){
     istr.ignore();
     istr >> m_day;
     
-    istr.ignore();
-    istr >> m_hour;
-    istr.ignore();
-    istr >> m_minute;
-    
+    if(!m_dateOnly){
+        istr.ignore();
+        istr >> m_hour;
+        
+        istr.ignore();
+        istr >> m_minute;
+    }
+//    if (!cin.fail()){
+//        m_dateOnly = false;
+//    }else {m_dateOnly = true;}
+
+    validateDate();
     
     return istr;
 }

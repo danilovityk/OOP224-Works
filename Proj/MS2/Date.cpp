@@ -147,15 +147,29 @@ std::ostream& Date::display(std::ostream& ostr) const
         
         if (m_dateOnly)
         {
-            ostr << m_year << "/" << m_month << "/" << m_day << std::endl;
+            ostr << m_year << "/";
+            if (m_month < 10) ostr << "0";
+            ostr << m_month << "/" << m_day << std::endl;
         }else
         {
-            ostr << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute;
+            ostr << m_year << "/";
+            if (m_month < 10) ostr << "0";
+            ostr << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute;
         }
         
     }else
     {
-        ostr << m_error << "(" << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << ")";
+        if (m_dateOnly){
+            ostr << m_error << "(" << m_year << "/";
+            if (m_month < 10) ostr << "0";
+            ostr << m_month << "/" << m_day << ")";
+        }else{
+            ostr << m_error << "(" << m_year << "/";
+            if (m_month < 10) ostr << "0";
+            ostr << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << ")";
+        }
+        
+        
     }
     
     return ostr;
@@ -165,24 +179,31 @@ std::ostream& Date::display(std::ostream& ostr) const
 std::istream& Date::read(std::istream& istr){
     
     m_error.clear();
-    
+    //m_dateOnly = false;
     istr >> m_year;
-    istr.ignore();
-    istr >> m_month;
-    istr.ignore();
-    istr >> m_day;
+    if(!istr.fail()){
+        istr.ignore();
+        istr >> m_month;
+        if(!istr.fail()){
+            istr.ignore();
+            istr >> m_day;
+            if(!istr.fail()){
+                if(!m_dateOnly){
+                    istr.ignore();
+                    istr >> m_hour;
+                    if(!istr.fail()){
+                        istr.ignore();
+                        istr >> m_minute;
+                        if (istr.fail()){m_error = "Cannot read minute entry";}
+                    }else{m_error = "Cannot read hour entry"; m_dateOnly = true;}
+                }
+            }else{m_error = "Cannot read day entry";}
+        }else{m_error = "Cannot read month entry";}
+    }else{m_error = "Cannot read year entry";}
+   
     
-    if(!m_dateOnly){
-        istr.ignore();
-        istr >> m_hour;
-        
-        istr.ignore();
-        istr >> m_minute;
-    }
-//    if (!cin.fail()){
-//        m_dateOnly = false;
-//    }else {m_dateOnly = true;}
-//
+    
+
     validateDate();
     
     return istr;

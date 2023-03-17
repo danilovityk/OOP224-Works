@@ -12,6 +12,7 @@
  */
 
 #include <iostream>
+#include <iomanip>
 #include "Date.h"
 
 using namespace std;
@@ -61,7 +62,7 @@ void Date::validateDate() {
                         
                     }else
                     {
-                        m_error = "Invalid Minute";
+                        m_error = "Invlid Minute";
                     }
                 }else
                 {
@@ -162,12 +163,12 @@ std::ostream& Date::display(std::ostream& ostr) const
         {
             ostr << m_year << "/";
             if (m_month < 10) ostr << "0";
-            ostr << m_month << "/" << m_day << std::endl;
+            ostr << m_month << "/" << setfill('0') << setw(2) << m_day;
         }else
         {
             ostr << m_year << "/";
             if (m_month < 10) ostr << "0";
-            ostr << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute;
+            ostr << m_month << "/" << setfill('0') << setw(2) << m_day << ", " << setw(2) <<  m_hour << ":" << setw(2) << m_minute;
         }
         
     }else
@@ -175,11 +176,11 @@ std::ostream& Date::display(std::ostream& ostr) const
         if (m_dateOnly){
             ostr << m_error << "(" << m_year << "/";
             if (m_month < 10) ostr << "0";
-            ostr << m_month << "/" << m_day << ")";
+            ostr << m_month << "/" << setfill('0') << setw(2) << m_day << ")";
         }else{
             ostr << m_error << "(" << m_year << "/";
             if (m_month < 10) ostr << "0";
-            ostr << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << ")";
+            ostr << m_month << "/" << setfill('0') << setw(2) << m_day << ", " << setw(2) << m_hour << ":" << setw(2)  << m_minute << ")";
         }
         
         
@@ -188,10 +189,19 @@ std::ostream& Date::display(std::ostream& ostr) const
     return ostr;
 }
 
+void Date::clearDate()
+{
+    m_year = 0;
+    m_month = 0;
+    m_day = 0;
+    m_hour = 0;
+    m_minute = 0;
+}
 
 std::istream& Date::read(std::istream& istr){
     
     m_error.clear();
+    clearDate();
     //m_dateOnly = false;
     istr >> m_year;
     if(!istr.fail()){
@@ -207,18 +217,13 @@ std::istream& Date::read(std::istream& istr){
                     if(!istr.fail()){
                         istr.ignore();
                         istr >> m_minute;
-                        if (istr.fail()){m_error = "Cannot read minute entry";}
-                    }else{m_error = "Cannot read hour entry"; m_dateOnly = true;}
-                }
+                        if (istr.fail()){m_error = "Cannot read minute entry";}else {validateDate();}
+                    }else{m_error = "Cannot read hour entry"; }
+                }else{validateDate();}
             }else{m_error = "Cannot read day entry";}
         }else{m_error = "Cannot read month entry";}
     }else{m_error = "Cannot read year entry";}
    
-    
-    
-
-    validateDate();
-    
     return istr;
 }
 

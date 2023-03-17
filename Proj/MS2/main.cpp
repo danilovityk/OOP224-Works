@@ -324,7 +324,7 @@ bool T5() {
 
    if(ok) {
       cout << "Opening \"dataEntries.txt\" file for data entry..." << endl;
-      fin.open("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS2/dateEntries.txt");
+      fin.open("dateEntries.txt");
       if(!fin) {
          cout << "Failed to open the file!" << endl;
          ok = false;

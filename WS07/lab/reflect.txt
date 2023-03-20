@@ -1,0 +1,15 @@
+/*
+ *         Name: Danylo Vityk
+ *         Email: dvityk@myseneca.ca
+ *         Sudent ID: 176326213
+ *         Date: Mar 15, 2023
+ *
+ *
+ *         I have done all the coding by myself and only copied the code that my professor provided to complete my workshops
+ *         and assignments.
+ *
+ *
+ */
+
+The hardest thing in this WS was foxing the bugs related to the price of creation as i misunderstood pdf instructions. Inheritance
+of the objects and functions was completely new to me, so it took some time to get used to it.

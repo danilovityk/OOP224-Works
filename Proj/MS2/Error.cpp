@@ -29,6 +29,10 @@ Error::Error(const char *errorType) {
     *this = errorType;
 }
 
+Error::Error(const Error& source){
+    ;
+}
+
 Error& Error::operator=(const Error& errorObj) {
     
     if (errorObj && this != &errorObj){

@@ -24,7 +24,7 @@ private:
 public:
     Error ();
     Error (const char* errorType);
-    
+    Error (const Error& source);
    
     Error& operator=(const Error& errorObj);
     Error& operator=(const char* errorType);

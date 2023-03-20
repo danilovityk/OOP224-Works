@@ -16,7 +16,7 @@ public:
 //    Returns void and receives a reference to istream as an argument.
     virtual void load(std::istream& istr) = 0;
 
-    virtual ~Media() = 0;
+    virtual ~Media() {};
 };
 
 std::ostream& operator<<(std::ostream& ostr, const Media& media);

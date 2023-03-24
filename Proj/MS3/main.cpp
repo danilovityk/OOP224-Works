@@ -38,9 +38,9 @@ int main() {
    Tool T[50];
    Tool M;
    int cnt{}, i;
-   ifstream ifile("tools.csv");
-   ofstream ofile("output.csv");
-   ifstream badFile("bad_tools.csv");
+   ifstream ifile("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS3/tools.csv");
+   ofstream ofile("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS3/output.csv");
+   ifstream badFile("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS3/bad_tools.csv");
    while(ifile) {
       ifile.ignore(2);
       ifile >> T[cnt];

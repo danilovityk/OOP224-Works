@@ -29,7 +29,7 @@ Item &Item::operator=(const Item &source) {
     if (this != &source)
     {
         if (m_name != nullptr) delete[] m_name;
-        m_name = new char [strlen(source.m_SKU) + 1];
+        m_name = new char [strlen(source.m_name) + 1];
         strncpy(m_name, source.m_name, strlen(source.m_name) + 1);
         strcpy(m_SKU, source.m_SKU);
         m_flag = source.m_flag;

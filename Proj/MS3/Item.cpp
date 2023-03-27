@@ -101,7 +101,7 @@ sdds::Item &Item::clear() {
 
 std::ostream &Item::write(std::ostream &ostr) const { 
     if(m_flag == POS_LIST){
-        char temp[100]{};
+        char temp[strlen(m_name) + 1];
         strcpy(temp, m_name);
         temp[20] = '\0';
         ostr << m_SKU << "   |" << setw(20) << left << temp << "|" << right << fixed << setprecision(2) << setw(7) << m_price << setprecision(0) << "| ";

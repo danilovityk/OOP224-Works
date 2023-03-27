@@ -30,7 +30,7 @@ Item &Item::operator=(const Item &source) {
     {
         if (m_name != nullptr) delete[] m_name;
         m_name = new char [strlen(source.m_SKU) + 1];
-        strncpy(m_name, source.m_name, MAX_SKU_LEN);
+        strncpy(m_name, source.m_name, MAX_NAME_LEN);
         strncpy(m_SKU, source.m_SKU, MAX_SKU_LEN);
         m_flag = source.m_flag;
         m_error = source.m_error;
@@ -279,8 +279,8 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
     if (!m_error){
         if(m_name != nullptr) delete[] m_name;
         m_name = new char [strlen(name) + 1];
-        strcpy(m_name, name);
-        strcpy(m_SKU, SKU);
+        strncpy(m_name, name, MAX_NAME_LEN);
+        strncpy(m_SKU, SKU, MAX_SKU_LEN);
         m_price = price;
         m_quantity = quantity;
         if (flag == 1) m_taxable = true;

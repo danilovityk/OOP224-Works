@@ -99,42 +99,43 @@ sdds::Item &Item::clear() {
     return *this;
 }
 
-std::ostream &Item::write(std::ostream &ostr) const { 
-    if(m_flag == POS_LIST){
-        //
-        char temp[strlen(m_name) + 1];
-        strcpy(temp, m_name);
-        temp[20] = '\0';
-        ostr << m_SKU << "   |" << setw(20) << left << temp << "|" << right << fixed << setprecision(2) << setw(7) << m_price << setprecision(0) << "| ";
-        if (m_taxable) {
-            ostr << "X";
+std::ostream &Item::write(std::ostream &ostr) const {
+    if(!m_error){
+        if(m_flag == POS_LIST){
+            //
+            char temp[strlen(m_name) + 1];
+            strcpy(temp, m_name);
+            temp[20] = '\0';
+            ostr << m_SKU << "   |" << setw(20) << left << temp << "|" << right << fixed << setprecision(2) << setw(7) << m_price << setprecision(0) << "| ";
+            if (m_taxable) {
+                ostr << "X";
+                
+            }else{
+                ostr << " ";
+                
+            }
+            ostr << " |" << setw(4) << m_quantity << "|" << setw(9) << setprecision(2) << cost() * m_quantity << "|";
             
-        }else{
-            ostr << " ";
+        }else {
+            
+            ostr << left << "=============v" << endl;
+            ostr << setw(13) << "Name:" << m_name << endl;
+            ostr << setw(13) << "Sku:" <<  m_SKU << endl;
+            ostr << setw(13) << "Price:" << fixed << setprecision(2) << m_price << endl;
+            ostr << setw(13) << "Price + tax:";
+            if (m_taxable){
+                ostr << cost() << endl;
+            }else{
+                ostr << "N/A" << endl;
+            }
+            ostr << setw(13) << "Stock Qty:" << setprecision(0) << m_quantity << endl;
+            
             
         }
-        ostr << " |" << setw(4) << m_quantity << "|" << setw(9) << setprecision(2) << cost() * m_quantity << "|";
-      
-    }else {
-        
-        ostr << left << "=============v" << endl;
-        ostr << setw(13) << "Name:" << m_name << endl;
-        ostr << setw(13) << "Sku:" <<  m_SKU << endl;
-        ostr << setw(13) << "Price:" << fixed << setprecision(2) << m_price << endl;
-        ostr << setw(13) << "Price + tax:";
-        if (m_taxable){
-            ostr << cost() << endl;
-        }else{
-            ostr << "N/A" << endl;
-        }
-        ostr << setw(13) << "Stock Qty:" << setprecision(0) << m_quantity << endl;
-        
-        
     }
     
-    
     if(m_error){
-        cerr << m_error << endl;
+        cerr << m_error;
     }
     
     return ostr;
@@ -240,16 +241,17 @@ std::ofstream &Item::save(std::ofstream &ofstr) const {
 std::ifstream& Item::load(std::ifstream &ifstr) {
     m_error.clear();
     
-    char SKU[MAX_SKU_LEN] = {'\0'};
-    char name[MAX_NAME_LEN] = {'\0'};
+    char SKU[200] = {'\0'};
+    char name[300] = {'\0'};
     double price = 0;
     int quantity = 0;
     int flag = 0;
     
-    ifstr.getline(SKU, MAX_SKU_LEN, ',');
-    if (ifstr.fail()) m_error = ERROR_POS_SKU;
-    ifstr.getline(name, MAX_NAME_LEN, ',');
-    if (!m_error && ifstr.fail()) m_error = ERROR_POS_NAME;
+    ifstr.getline(SKU, 199, ',');
+    if (ifstr.fail() || strlen(SKU) > MAX_SKU_LEN) m_error = ERROR_POS_SKU;
+    
+    ifstr.getline(name, 299, ',');
+    if (!m_error && (ifstr.fail() || strlen(name) > MAX_NAME_LEN)) m_error = ERROR_POS_NAME;
     ifstr >> price;
     ifstr.ignore();
     ifstr >> flag;
@@ -268,7 +270,7 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
                 
                 m_error = ERROR_POS_TAX;
                 
-            }else if(quantity < 0 || quantity > MAX_NO_ITEMS){
+            }else if(quantity < 0 || quantity > MAX_STOCK_NUMBER){
                 
                 m_error = ERROR_POS_QTY;
                 

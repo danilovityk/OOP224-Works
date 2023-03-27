@@ -41,6 +41,8 @@ Error& Error::operator=(const Error& errorObj) {
         m_errorType = new char [size + 1];
         strcpy(m_errorType, errorObj.m_errorType);
         m_errorType[size] = '\0';
+    }else{
+        clear();
     }
     return *this;
     }

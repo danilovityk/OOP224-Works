@@ -30,8 +30,8 @@ Item &Item::operator=(const Item &source) {
     {
         if (m_name != nullptr) delete[] m_name;
         m_name = new char [strlen(source.m_SKU) + 1];
-        strcpy(m_name, source.m_name);
-        strcpy(m_SKU, source.m_SKU);
+        strncpy(m_name, source.m_name, MAX_SKU_LEN);
+        strncpy(m_SKU, source.m_SKU, MAX_SKU_LEN);
         m_flag = source.m_flag;
         m_error = source.m_error;
         m_price = source.m_price;

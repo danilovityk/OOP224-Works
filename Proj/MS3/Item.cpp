@@ -224,7 +224,7 @@ std::istream &Item::read(std::istream &istr) {
     }
 
 std::ofstream &Item::save(std::ofstream &ofstr) const { 
-    ofstr << m_SKU << "," << m_name << "," << m_price << "," << m_flag << "," << m_quantity;
+    ofstr << "T," << m_SKU << "," << m_name << "," << fixed << setprecision(2) << m_price << "," << m_flag << "," << m_quantity;
     
     if (m_error) cerr << m_error << endl;
     
@@ -264,7 +264,7 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
         strcpy(m_SKU, SKU);
         m_price = price;
         m_quantity = quantity;
-        if (flag == 1) m_taxable = true;
+        m_flag = flag;
         
     }
     

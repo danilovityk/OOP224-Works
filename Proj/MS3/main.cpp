@@ -89,7 +89,7 @@ int main() {
       ofile << T[i] << endl;
    }
    ofile.close();
-   displayFile("output.csv");
+   displayFile("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS3/output.csv");
    cnt = 1;
    while(badFile) {
       badFile.ignore(2);

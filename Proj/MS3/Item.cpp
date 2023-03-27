@@ -167,7 +167,7 @@ std::istream &Item::read(std::istream &istr) {
                 delete[] m_name;
             }
             m_name = new char [MAX_SKU_LEN + 1];
-            strncpy(m_name, buffer, MAX_NAME_LEN);
+            strcpy(m_name, buffer);
         }
         
     } while(strlen(buffer) > MAX_NAME_LEN || istr.fail());

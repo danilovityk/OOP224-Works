@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "PosIO.h"
 
 using namespace std;

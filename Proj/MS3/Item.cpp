@@ -223,8 +223,10 @@ std::istream &Item::read(std::istream &istr) {
     return istr;
     }
 
-std::ofstream &Item::save(std::ofstream &ofstr) const { 
-    ofstr << "T," << m_SKU << "," << m_name << "," << fixed << setprecision(2) << m_price << "," << m_flag << "," << m_quantity;
+std::ofstream &Item::save(std::ofstream &ofstr) const {
+    int taxable = 0;
+    if (m_taxable) taxable = 1;
+    ofstr << "T," << m_SKU << "," << m_name << "," << fixed << setprecision(2) << m_price << "," << taxable << "," << m_quantity;
     
     if (m_error) cerr << m_error << endl;
     
@@ -234,14 +236,16 @@ std::ofstream &Item::save(std::ofstream &ofstr) const {
 std::ifstream& Item::load(std::ifstream &ifstr) {
     m_error.clear();
     
-    char SKU[MAX_SKU_LEN];
-    char name[MAX_NAME_LEN];
-    double price;
-    int quantity;
-    int flag;
+    char SKU[MAX_SKU_LEN]{};
+    char name[MAX_NAME_LEN]{};
+    double price = 0;
+    int quantity = 0;
+    int flag = 0;
     
     ifstr.getline(SKU, MAX_SKU_LEN, ',');
+    if (ifstr.fail()) m_error = ERROR_POS_SKU;
     ifstr.getline(name, MAX_NAME_LEN, ',');
+    if (!m_error && ifstr.fail()) m_error = ERROR_POS_NAME;
     ifstr >> price;
     ifstr.ignore();
     ifstr >> flag;
@@ -249,11 +253,23 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
     ifstr >> quantity;
     
     if (!m_error){
+        
         if (!ifstr.fail()){
-            if(price < 0) m_error = ERROR_POS_PRICE;
-            if(!m_error){
-                if(quantity < 0 || quantity > MAX_NO_ITEMS) m_error = ERROR_POS_QTY;
+            
+            if (price < 0) {
+                
+                m_error = ERROR_POS_PRICE;
+                
+            } else if (flag != 1 && flag != 0) {
+                
+                m_error = ERROR_POS_TAX;
+                
+            }else if(quantity < 0 || quantity > MAX_NO_ITEMS){
+                
+                m_error = ERROR_POS_QTY;
+                
             }
+            
         }
     }
     
@@ -264,9 +280,10 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
         strcpy(m_SKU, SKU);
         m_price = price;
         m_quantity = quantity;
-        m_flag = flag;
+        if (flag == 1) m_taxable = true;
         
     }
+ 
     
     return ifstr;
 }

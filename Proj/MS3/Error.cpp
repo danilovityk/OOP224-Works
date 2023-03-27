@@ -61,6 +61,7 @@ Error::operator bool() const{
 }
 
 Error& Error::clear() {
+    delete[] m_errorType;
     m_errorType = nullptr;
     return *this;
 }

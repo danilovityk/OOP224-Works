@@ -239,8 +239,8 @@ std::ofstream &Item::save(std::ofstream &ofstr) const {
 std::ifstream& Item::load(std::ifstream &ifstr) {
     m_error.clear();
     
-    char SKU[MAX_SKU_LEN]{};
-    char name[MAX_NAME_LEN]{};
+    char SKU[MAX_SKU_LEN] = {'\0'};
+    char name[MAX_NAME_LEN] = {'\0'};
     double price = 0;
     int quantity = 0;
     int flag = 0;

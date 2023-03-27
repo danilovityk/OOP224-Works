@@ -286,6 +286,7 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
         strcpy(m_SKU, SKU);
         m_price = price;
         m_quantity = quantity;
+        m_flag = false;
         if (flag == 1) m_taxable = true;
         
     }

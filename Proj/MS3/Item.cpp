@@ -173,7 +173,10 @@ std::istream &Item::read(std::istream &istr) {
     } while(strlen(buffer) > MAX_NAME_LEN || istr.fail());
     cout << "Price" << endl;
     do {
-        if (istr.fail()) cin.clear();
+        if (istr.fail()){
+            cin.clear();
+            cin.ignore(99999, '\n');
+        }
         cout << "> ";
         istr >> m_price;
         

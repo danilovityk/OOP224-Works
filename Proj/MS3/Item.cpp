@@ -30,7 +30,7 @@ Item &Item::operator=(const Item &source) {
     {
         if (m_name != nullptr) delete[] m_name;
         m_name = new char [strlen(source.m_SKU) + 1];
-        strcpy(m_name, source.m_name);
+        strncpy(m_name, source.m_name, strlen(source.m_SKU) + 1);
         strcpy(m_SKU, source.m_SKU);
         m_flag = source.m_flag;
         m_error = source.m_error;
@@ -101,8 +101,8 @@ sdds::Item &Item::clear() {
 
 std::ostream &Item::write(std::ostream &ostr) const { 
     if(m_flag == POS_LIST){
-        char temp[21];
-        strncpy(temp, m_name, 20);
+        char temp[100];
+        strcpy(temp, m_name);
         temp[20] = '\0';
         ostr << m_SKU << "   |" << setw(20) << left << temp << "|" << right << fixed << setprecision(2) << setw(7) << m_price << setprecision(0) << "| ";
         if (m_taxable) {

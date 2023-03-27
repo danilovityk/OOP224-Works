@@ -279,8 +279,8 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
     if (!m_error){
         if(m_name != nullptr) delete[] m_name;
         m_name = new char [strlen(name) + 1];
-        strncpy(m_name, name, MAX_NAME_LEN);
-        strncpy(m_SKU, SKU, MAX_SKU_LEN);
+        strcpy(m_name, name);
+        strcpy(m_SKU, SKU);
         m_price = price;
         m_quantity = quantity;
         if (flag == 1) m_taxable = true;

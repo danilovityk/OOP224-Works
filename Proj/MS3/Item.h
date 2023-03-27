@@ -24,7 +24,7 @@ public:
     Item& operator=(const Item& source);
     
     bool operator==(Item& rop) const;
-    bool operator==(char rop[]) const;
+    bool operator==(const char* rop) const;
     bool operator>(Item& rop) const;
     int operator+=(int quantity);
     int operator-=(int rop);

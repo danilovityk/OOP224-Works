@@ -46,7 +46,7 @@ bool Item::operator==(sdds::Item &rop) const {
     return strcmp(m_SKU, rop.m_SKU);
 }
 
-bool Item::operator==(char rop[]) const {
+bool Item::operator==(const char* rop) const {
     return !(strcmp(m_SKU, rop));
 }
 

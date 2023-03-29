@@ -45,7 +45,8 @@ namespace sdds{
         if (*this){
             Person::write(ostr);
             ostr << endl << m_address << endl << m_city << " " << m_province << endl;
-            for (int i = 0; i < 6; i++){
+            int length = strLen(m_postalCode);
+            for (int i = 0; i < length; i++){
                 if(i == 3) ostr << " ";
                 ostr << m_postalCode[i];
                 

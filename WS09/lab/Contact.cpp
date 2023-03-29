@@ -44,7 +44,15 @@ namespace sdds{
     std::ostream &Contact::write(std::ostream &ostr) const {
         if (*this){
             Person::write(ostr);
-            ostr << endl << m_address << endl << m_city << " " << m_province << endl << m_postalCode << endl;
+            ostr << endl << m_address << endl << m_city << " " << m_province << endl;
+            for (int i = 0; i < 6; i++){
+                if(i == 3) ostr << " ";
+                ostr << m_postalCode[i];
+                
+                
+            }
+            
+            ostr << endl;
         }
         
         return ostr;

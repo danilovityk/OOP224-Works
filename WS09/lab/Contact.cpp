@@ -52,7 +52,6 @@ namespace sdds{
     
 
     Contact::~Contact() {
-        Person::~Person();
         operator~();
     }
     

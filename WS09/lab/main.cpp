@@ -26,7 +26,7 @@ Contact readContact(ifstream& ifstr) {
 
 int main() {
    Contact C;
-   ifstream file("contacts.txt");
+   ifstream file("/Users/danilovityk/Documents/OOP244/OOP-Workshops/WS09/lab/contacts.txt");
    cout << "Empty Contact: >" << C << "<" << endl;
    cout << "Copy and paste the following data entries..." << endl;
    cout << "Enter the following (Correct Data Entry):" << endl

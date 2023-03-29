@@ -26,16 +26,16 @@ namespace sdds{
     }
     
     std::istream &Contact::read(std::istream &istr) {
-        ~*this;
+        
+        
         Person::read(istr);
         m_address = dynRead(istr, ',');
         m_city = dynRead(istr, ',');
-        char* temp = dynRead(istr, ',');
-        strCpy(m_province, temp);
-        delete[] temp;
-        temp = dynRead(istr, '\n');
-        strCpy(m_postalCode, temp);
-        delete[] temp;
+        
+        istr.getline(m_province, 3, ',');
+      //  istr.ignore();
+        istr.getline(m_postalCode, 7, '\n');
+       // istr.ignore();
         if (istr.fail()) ~*this;
         
         return istr;
@@ -44,13 +44,12 @@ namespace sdds{
     std::ostream &Contact::write(std::ostream &ostr) const {
         if (*this){
             Person::write(ostr);
-            ostr << endl << m_address << endl << m_city << " " << m_province << endl << m_postalCode;
+            ostr << endl << m_address << endl << m_city << " " << m_province << endl << m_postalCode << endl;
         }
         
         return ostr;
     }
     
-
     Contact::~Contact() {
         Person::~Person();
         operator~();

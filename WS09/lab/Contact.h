@@ -10,8 +10,8 @@ class Contact : public Person {
 private:
     char* m_address = nullptr;
     char* m_city = nullptr;
-    char m_province[2]{};
-    char m_postalCode[6]{};
+    char m_province[3]{};
+    char m_postalCode[7]{};
 
 public:
   Contact();

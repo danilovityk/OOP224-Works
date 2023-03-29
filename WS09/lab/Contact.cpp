@@ -50,6 +50,7 @@ namespace sdds{
         return ostr;
     }
     
+
     Contact::~Contact() {
         Person::~Person();
         operator~();

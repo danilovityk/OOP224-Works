@@ -38,7 +38,7 @@ std::ostream &Perishable::write(std::ostream &ostr) const {
     Item::write(ostr);
     
     if (*this){
-        if (m_flag == POS_LIST) ostr << " " << m_date << " |";
+        if (m_flag == POS_LIST) ostr << "  " << m_date << " |";
         if (m_flag == POS_FORM) ostr << "Expiry date: " << m_date << "\n=============^" << endl;
 
     }

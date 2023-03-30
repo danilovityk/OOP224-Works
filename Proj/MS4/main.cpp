@@ -32,8 +32,8 @@ void perishableTest() {
    int num{};
    char ch{};
    Perishable PI[10];
-   ifstream input("perishableInput.csv");
-   ofstream output("perishableOutput.csv");
+   ifstream input("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS4/perishableInput.csv");
+   ofstream output("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS4/perishableOutput.csv");
    while((input >> PI[i]).ignore(100, '\n')) {
       output << PI[i++] << endl;
    }
@@ -63,7 +63,7 @@ void perishableTest() {
       cout << PI[i].displayType(POS_FORM);
    }
    input.close();
-   input.open("perishableOutput.csv");
+   input.open("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS4/perishableOutput.csv");
    div("perishableOutput.csv");
    while(input.get(ch)) {
       cout << ch;
@@ -76,8 +76,8 @@ void nonPerishableTest() {
    int num{};
    char ch{};
    NonPerishable NI[10];
-   ifstream input("nonPerInput.csv");
-   ofstream output("nonPerOutput.csv");
+   ifstream input("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS4/nonPerInput.csv");
+   ofstream output("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS4/nonPerOutput.csv");
    while((input >> NI[i]).ignore(100, '\n')) {
       output << NI[i++] << endl;
    }
@@ -92,7 +92,7 @@ void nonPerishableTest() {
       cout << NI[i].displayType(POS_FORM);
    }
    input.close();
-   input.open("nonPerOutput.csv");
+   input.open("/Users/danilovityk/Documents/OOP244/OOP-Workshops/Proj/MS4/nonPerOutput.csv");
    div("nonPerOutput.csv");
    while(input.get(ch)) {
       cout << ch;

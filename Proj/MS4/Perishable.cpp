@@ -75,7 +75,7 @@ std::ifstream &Perishable::load(std::ifstream &ifstr) {
 
 std::ofstream &Perishable::save(std::ofstream &ofstr) const {
     
-    if(*this) ofstr << ItemType() << ',';
+    
     
     Item::save(ofstr);
     

@@ -236,7 +236,7 @@ std::istream &Item::read(std::istream &istr) {
 std::ofstream &Item::save(std::ofstream &ofstr) const {
     int taxable = 0;
     if (m_taxable) taxable = 1;
-    ofstr << "T," << m_SKU << "," << m_name << "," << fixed << setprecision(2) << m_price << "," << taxable << "," << m_quantity;
+    ofstr << m_SKU << "," << m_name << "," << fixed << setprecision(2) << m_price << "," << taxable << "," << m_quantity;
     
     if (m_error) cerr << m_error << endl;
     

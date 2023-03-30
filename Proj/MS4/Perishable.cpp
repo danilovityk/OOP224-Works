@@ -18,7 +18,7 @@ std::istream &Perishable::read(std::istream &istr) {
         Date local;
         local.dateOnly(true);
         
-        cout << "Expiry date(YYYY/MM/DD)\n" << "> ";
+        cout << "Expiry date (YYYY/MM/DD)\n" << "> ";
         
         istr >> local;
         

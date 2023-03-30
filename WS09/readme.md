@@ -1,5 +1,5 @@
 # Workshop #9: Derived Classes and Resources
-Version 1.0
+Version 1.1 (corrected main and correct_output.ctx)
 
 # The Contact Class
 
@@ -169,179 +169,14 @@ Displaying an invalid **Contact** object will be quietly ignored and no action w
 
 ## Tester program
 
-```C++
-/***********************************************************************
-// OOP244 Workshop 9:
-// File	w9_tester.cpp
-// Version 1.0
-// Date	2021/11/19
-// Author	Fardad Soleimanloo
-// Description
-//
-// Revision History
-// -----------------------------------------------------------
-// Name            Date            Reason
-/////////////////////////////////////////////////////////////////
-***********************************************************************/
+<a href="lab/main.cpp" target="_blank">main.cpp</a>
 
-#include <iostream>
-#include <fstream>
-#include "Contact.h"
-
-using namespace std;
-using namespace sdds;
-Contact readContact(ifstream& ifstr) {
-   Contact fC;
-   ifstr >> fC;
-   return fC;
-}
-
-int main() {
-   Contact C;
-   ifstream file("contacts.txt");
-   cout << "Empty Contact: >" << C << "<" << endl;
-   cout << "Enter the following:" << endl
-      << "Homer,Jay,Simpson" << endl
-      << "70 the pond road,North York,ON,M3J3M6" << endl << endl;
-   cout << "Name and address" << endl << "> ";
-   cin >> C;
-   if (cin)
-      cout << "OK!" << endl;
-   else {
-      cout << "Date entry implemented incorrectly" << endl;
-      cin.clear();
-      cin.ignore(1000, '\n');
-   }
-   cout << "Contact:" << endl << C << endl << endl;
-   //---------------------------------------
-   cout << "Enter the following:" << endl
-      << "Homer,Jay,Simpson" << endl
-      << "70 the pond road,North York,ONT,M3J3M6" << endl << endl;
-   cout << "Name and address" << endl << "> ";
-   cin >> C;
-   if (cin)
-      cout << "Date entry implemented incorrectly" << endl;
-   else {
-      cin.clear();
-      cin.ignore(1000, '\n');
-   }
-   cout << "Empty Contact: >" << C << "<" << endl << endl;
-   //---------------------------------------
-   cout << "Enter the following:" << endl
-      << "Homer,Jay,Simpson" << endl
-      << "70 the pond road,North York,ON,M3J 3M6" << endl << endl;
-   cout << "Name and address" << endl << "> ";
-   cin >> C;
-   if (!cin){
-      cin.clear();
-      cin.ignore(1000, '\n');
-   }
-   cout << "Empty Contact: >" << C << "<" << endl << endl;
-   //---------------------------------------
-   cout << "Enter the following:" << endl
-      << "Homer,Jay,Simpson" << endl
-      << "70 the pond road,,ON,M3J3M6" << endl << endl;
-   cout << "Name and address" << endl << "> ";
-   cin >> C;
-   if (!cin){
-      cin.clear();
-      cin.ignore(1000, '\n');
-   }
-   cout << "Empty Contact: >" << C << "<" << endl << endl;
-   //---------------------------------------
-   cout << "Enter the following:" << endl
-      << "Homer,Jay,Simpson" << endl
-      << ",North York,ON,M3J3M6" << endl << endl;
-   cout << "Name and address" << endl << "> ";
-   cin >> C;
-   if (!cin){
-      cin.clear();
-      cin.ignore(1000, '\n');
-   }
-   cout << "Empty Contact: >" << C << "<" << endl << endl;
-   cout << "Name and addresses in file: " << endl;
-   while (file) {
-      C = readContact(file);
-      if (file) cout << C << endl;
-   }
-   return 0;
-}
-
-```
 ## output
 
-```Text
-Empty Contact: ><
-Enter the following:
-Homer,Jay,Simpson
-70 the pond road,North York,ON,M3J3M6
 
-Name and address
-> Homer,Jay,Simpson
-70 the pond road,North York,ON,M3J3M6
-OK!
-Contact:
-Homer Jay Simpson
-70 the pond road
-North York ON
-M3J 3M6
-
-
-Enter the following:
-Homer,Jay,Simpson
-70 the pond road,North York,ONT,M3J3M6
-
-Name and address
-> Homer,Jay,Simpson
-70 the pond road,North York,ONT,M3J3M6
-Empty Contact: ><
-
-Enter the following:
-Homer,Jay,Simpson
-70 the pond road,North York,ON,M3J 3M6
-
-Name and address
-> Homer,Jay,Simpson
-70 the pond road,North York,ON,M3J 3M6
-Empty Contact: ><
-
-Enter the following:
-Homer,Jay,Simpson
-70 the pond road,,ON,M3J3M6
-
-Name and address
-> Homer,Jay,Simpson
-70 the pond road,,ON,M3J3M6
-Empty Contact: ><
-
-Enter the following:
-Homer,Jay,Simpson
-,North York,ON,M3J3M6
-
-Name and address
-> Homer,Jay,Simpson
-,North York,ON,M3J3M6
-Empty Contact: ><
-
-Name and addresses in file:
-Homer Jay Simpson
-70 the pond road
-North York ON
-M3J 3M6
-
-Fred Soley
-1 York Gate Blvd
-North York ON
-M3N 3A1
-
-John Al Doe
-1750 Finch Ave E
-North York ON
-M2J 2X5
-
+<a href="lab/correct_output.txt" target="_blank">correct_output.txt</a>
 
 ```
-
 ## Files needed for submission
 ```Text
 Tools.h

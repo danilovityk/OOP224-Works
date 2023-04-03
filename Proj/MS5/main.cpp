@@ -16,7 +16,7 @@ void displayfileContent();
 int main() {
    resetDataFile();
    displayfileContent();
-   sdds::PosApp pos("posdata.csv");
+   sdds::PosApp pos("/Users/danilovityk/Documents/OOP244/OOP224-Works/Proj/MS5/posdata.csv");
    pos.run();
    displayfileContent();
    return 0;

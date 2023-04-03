@@ -79,7 +79,7 @@ void PosApp::run() {
     }while(choice != 0);
     
     cout << ">>>> Saving Data............................................................." << endl << "Saving data in datafile.csv" << endl << "Goodbye!" << endl;
-    
+    saveRecs();
 }
 
 PosApp::PosApp(const char *filename) {
@@ -113,12 +113,13 @@ void PosApp::listItems() {
         
         for (int i = 1; i < m_numberOfItems; i++)
         {
+            
             if (m_items[i-1]->operator>(*m_items[i]))
             {
                 flag = true;
-                Item *temp = m_items[i-1];
-                m_items[i-1] = m_items[i];
-                m_items[i] = temp;
+                Item *temp = m_items[i];
+                m_items[i] = m_items[i-1];
+                m_items[i-1] = temp;
             }
         }
         
@@ -161,10 +162,12 @@ void PosApp::saveRecs() const {
     
     ofstream outputFile(m_fileName);
     for (int i = 0; i < m_numberOfItems; i++){
-        outputFile << m_items[i];
+        m_items[i] -> save(outputFile);
+        outputFile << endl;
+        
     }
     
-    
+    outputFile.close();
 }
 
 void PosApp::loadRecs() {

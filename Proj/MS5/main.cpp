@@ -23,8 +23,8 @@ int main() {
 }
 void resetDataFile() {
    char ch{};
-   std::ofstream outfile("posdata.csv");
-   std::ifstream infile("posdataOrigin.csv");
+   std::ofstream outfile("/Users/danilovityk/Documents/OOP244/OOP224-Works/Proj/MS5/posdata.cs");
+   std::ifstream infile("/Users/danilovityk/Documents/OOP244/OOP224-Works/Proj/MS5/posdataOrigin.csv");
    while(infile.get(ch)) {
       outfile.put(ch);
    }
@@ -32,7 +32,7 @@ void resetDataFile() {
 void displayfileContent() {
    std::cout << "Data file:\n------------------\n";
    char ch{};
-   std::ifstream infile("posdata.csv");
+   std::ifstream infile("/Users/danilovityk/Documents/OOP244/OOP224-Works/Proj/MS5/posdata.csv");
    while(infile.get(ch)) {
       std::cout.put(ch);
    }

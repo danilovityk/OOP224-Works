@@ -51,7 +51,8 @@ bool Item::operator==(const char* rop) const {
 }
 
 bool Item::operator>(const sdds::Item &rop) const {
-    return m_name > rop.m_name;
+    
+    return strcmp(m_name, rop.m_name) > 0;
 }
 
 int Item::operator+=(int quantity) {

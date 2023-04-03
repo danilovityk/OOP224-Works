@@ -188,29 +188,36 @@ void PosApp::saveRecs() const {
 }
 
 void PosApp::loadRecs() {
+    char productType;
+    m_numberOfItems = 0;
     
-    ifstream input(m_fileName);
-       if (!input) {
+    for (int i = 0; i < MAX_NO_ITEMS; i++) {
+        m_items[i] = nullptr;
+    }
+ 
+    ifstream sourceFile(m_fileName);
+       if (!sourceFile)
+       {
            ofstream output(m_fileName);
            output.close();
        }
-       for (int i = 0; i < MAX_NO_ITEMS; i++) {
-           m_items[i] = nullptr;
-       }
-       m_numberOfItems = 0;
-       
-       char type;
-       while (input >> type && m_numberOfItems < MAX_NO_ITEMS) {
-           input.ignore();
-           Item* item = nullptr;
-           if (type == 'N') {
-               item = new NonPerishable();
-           } else if (type == 'P') {
-               item = new Perishable();
+          
+       while (sourceFile >> productType && m_numberOfItems < MAX_NO_ITEMS) {
+           sourceFile.ignore();
+           Item* temp = nullptr;
+           
+           if (productType == 'N')
+           {
+               temp = new NonPerishable();
+               
+           } else if (productType == 'P')
+           {
+               temp = new Perishable();
            }
-
-           input >> *item;
-           m_items[m_numberOfItems] = item;
+           
+           sourceFile >> *temp;
+           
+           m_items[m_numberOfItems] = temp;
            m_numberOfItems++;
        }
     

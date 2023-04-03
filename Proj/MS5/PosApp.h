@@ -1,3 +1,21 @@
+/*
+|||   Final Project Milestone 5/1
+|||   Module: Whatever
+|||   Filename: PosApp.h
+|||   Version 1.0
+|||   Author    Danylo Vityk
+|||   Revision History
+|||   -----------------------------------------------------------
+|||   Date      Reason
+|||   2020/?/?  Preliminary release
+|||   2020/?/?  Debugged DMA
+|||   -----------------------------------------------------------
+|||   I have done all the coding by myself and only copied the code
+|||   that my professor provided to complete my project milestones.
+|||   -----------------------------------------------------------
+*/
+
+
 #ifndef POSAPP_H
 #define POSAPP_H
 

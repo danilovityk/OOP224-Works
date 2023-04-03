@@ -1,3 +1,20 @@
+/*
+|||   Final Project Milestone 5/1
+|||   Module: Whatever
+|||   Filename: PosApp.cpp
+|||   Version 1.0
+|||   Author    Danylo Vityk
+|||   Revision History
+|||   -----------------------------------------------------------
+|||   Date      Reason
+|||   2020/?/?  Preliminary release
+|||   2020/?/?  Debugged DMA
+|||   -----------------------------------------------------------
+|||   I have done all the coding by myself and only copied the code
+|||   that my professor provided to complete my project milestones.
+|||   -----------------------------------------------------------
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -150,7 +167,7 @@ void PosApp::listItems() {
     cout << "-----^--------^--------------------^-------^---^----^---------^-------------^" << endl;
     cout << fixed << setprecision(2);
     cout << "                               Total Asset: $  |       " << total << "|" << endl;
-    cout << "-----------------------------------------------^--------------^" << endl;
+    cout << "-----------------------------------------------^--------------^" << endl << endl;
   
 }
 

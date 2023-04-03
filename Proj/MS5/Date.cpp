@@ -1,16 +1,19 @@
 /*
- *         Name: Danylo Vityk
- *         Email: dvityk@myseneca.ca
- *         Sudent ID: 176326213
- *         Date: Mar 17, 2023
- *
- *
- *         I have done all the coding by myself and only copied the code that my professor provided to complete my workshops
- *         and assignments.
- *
- *
- */
-
+|||   Final Project Milestone 5/1
+|||   Module: Whatever
+|||   Filename: Date.cpp
+|||   Version 1.0
+|||   Author    Danylo Vityk
+|||   Revision History
+|||   -----------------------------------------------------------
+|||   Date      Reason
+|||   2020/?/?  Preliminary release
+|||   2020/?/?  Debugged DMA
+|||   -----------------------------------------------------------
+|||   I have done all the coding by myself and only copied the code
+|||   that my professor provided to complete my project milestones.
+|||   -----------------------------------------------------------
+*/
 #include <iostream>
 #include <iomanip>
 #include "Date.h"
@@ -168,6 +171,8 @@ const Error &Date::error() const {
 
 std::ostream& Date::display(std::ostream& ostr) const
 {
+    ostr.unsetf(ios::left);
+    ostr.setf(ios::right);
     if(*this){
         
         if (m_dateOnly)
@@ -197,6 +202,8 @@ std::ostream& Date::display(std::ostream& ostr) const
         
     }
     
+    ostr.unsetf(ios::right);
+    ostr.setf(ios::left);
     return ostr;
 }
 

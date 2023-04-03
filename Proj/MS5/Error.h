@@ -1,15 +1,19 @@
 /*
- *         Name: Danylo Vityk
- *         Email: dvityk@myseneca.ca
- *         Sudent ID: 176326213
- *         Date: Mar 17, 2023
- *
- *
- *         I have done all the coding by myself and only copied the code that my professor provided to complete my workshops
- *         and assignments.
- *
- *
- */
+|||   Final Project Milestone 5/1
+|||   Module: Whatever
+|||   Filename: Error.h
+|||   Version 1.0
+|||   Author    Danylo Vityk
+|||   Revision History
+|||   -----------------------------------------------------------
+|||   Date      Reason
+|||   2020/?/?  Preliminary release
+|||   2020/?/?  Debugged DMA
+|||   -----------------------------------------------------------
+|||   I have done all the coding by myself and only copied the code
+|||   that my professor provided to complete my project milestones.
+|||   -----------------------------------------------------------
+*/
 
 #ifndef ERROR_H
 #define ERROR_H

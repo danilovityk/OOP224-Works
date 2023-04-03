@@ -1,6 +1,6 @@
 /*
 |||   Final Project Milestone 5/1
-|||   Module: Whatever
+|||   Module: POS
 |||   Filename: POS.h
 |||   Version 1.0
 |||   Author    Danylo Vityk

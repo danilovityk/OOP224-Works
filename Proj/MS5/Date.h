@@ -1,6 +1,6 @@
 /*
 |||   Final Project Milestone 5/1
-|||   Module: Whatever
+|||   Module: Date
 |||   Filename: Date.h
 |||   Version 1.0
 |||   Author    Danylo Vityk

@@ -124,12 +124,8 @@ void PosApp::addItem() {
         Item* tempItem = nullptr;
         cout << "Is the Item perishable? (Y)es/(N)o: ";
         cin >> tempPerishable;
+        cin.ignore(9999, '\n');
         
-        if (cin.fail())
-        {
-            cin.clear();
-            cin.ignore(9999, '\n');
-        }
         
         if (tempPerishable == 'y')
         {

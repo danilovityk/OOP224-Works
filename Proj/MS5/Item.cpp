@@ -104,7 +104,7 @@ Item& Item::displayType(int flag) {
 }
 
 double Item::cost() const {
-    return m_taxable ? ((m_price) + m_price * TAX) :  m_price;
+    return m_taxable ? m_price + m_price * TAX :  m_price;
 }
 
 int Item::quantity() const {

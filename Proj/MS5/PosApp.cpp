@@ -112,46 +112,54 @@ PosApp::PosApp(const char *filename) {
 }
 
 void PosApp::addItem() { 
-    char per;
+    
     
     if(m_numberOfItems >= MAX_NO_ITEMS)
     {
         cout << "Inventory Full" << endl;
-        return;
-    }
-    
-    Item* item = nullptr;
-    cout << "Is the Item perishable? (Y)es/(N)o: ";
-    cin >> per;
-    cin.clear();
-    cin.ignore(1000, '\n');
-    
-    if (per == 'y')
-    {
-        item = new Perishable();
-    }
-    else if(per == 'n')
-    {
-        item = new NonPerishable();
-    }
-    
-    bool done = false;
-    while (!done) {
-        cin >> *item;
-        if (cin.fail()) {
+        
+    }else{
+        
+        char tempPerishable = '\0';
+        Item* tempItem = nullptr;
+        cout << "Is the Item perishable? (Y)es/(N)o: ";
+        cin >> tempPerishable;
+        
+        if (cin.fail())
+        {
             cin.clear();
-            cin.ignore(1000, '\n');
-            cout << *item << ", try again..." << endl;
-        } else {
-            done = true;
+            cin.ignore(9999, '\n');
         }
+        
+        if (tempPerishable == 'y')
+        {
+            tempItem = new Perishable();
+            
+        }else if(tempPerishable == 'n')
+        {
+            
+            tempItem = new NonPerishable();
+            
+        }
+        
+        bool done = false;
+        while (!done) {
+            cin >> *tempItem;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(9999, '\n');
+                cout << *tempItem << ", try again..." << endl;
+            } else {
+                done = true;
+            }
+        }
+        
+        
+        m_items[m_numberOfItems++] = tempItem;
+        saveRecs();
+        
     }
     
-    // Add the item address to the next available element of Iptr and increase the nptr
-    m_items[m_numberOfItems++] = item;
-    
-
-    saveRecs();
 }
 
 void PosApp::removeItem() { 

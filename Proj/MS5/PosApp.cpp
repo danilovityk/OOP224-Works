@@ -77,6 +77,7 @@ void PosApp::run() {
             case 2:
                 cout << ">>>> Adding Item to the store................................................" << endl;
                 addItem();
+                cout << ">>>> DONE!..................................................................." << endl;
                 break;
                 
             case 3:

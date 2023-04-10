@@ -33,7 +33,7 @@ int PosApp::menu() {
     
     int choice;
     bool flag;
-    cout << "The Sene-Store" << endl << "1- List items" << endl << "2- Add item" << endl << "3- Remove item" << endl << "4- Stock item" << endl <<  "5- Point of Sale" << endl << "0- exit program" << endl << "> ";
+    cout << "The Sene-Store" << endl << "1- List items" << endl << "2- Add item" << endl << "3- Remove item" << endl << "4- Stock item" << endl <<  "5- POS" << endl << "0- exit program" << endl << "> ";
     
     
     do{
@@ -96,7 +96,7 @@ void PosApp::run() {
         }
     }while(choice != 0);
     
-    cout << ">>>> Saving Data............................................................." << endl << "Saving data in datafile.csv" << endl << "Goodbye!" << endl;
+    cout << ">>>> Saving Data............................................................." << endl << "Goodbye!" << endl;
     saveRecs();
 }
 

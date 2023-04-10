@@ -37,7 +37,7 @@ protected:
 public:
     Item();
     Item(const Item& source);
-    ~Item();
+    virtual ~Item();
     Item& operator=(const Item& source);
     
     bool operator==(Item& rop) const;

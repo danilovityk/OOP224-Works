@@ -302,7 +302,7 @@ std::ifstream& Item::load(std::ifstream &ifstr) {
     }
     
     if (!m_error){
-        if(m_name != nullptr) delete[] m_name;
+        delete[] m_name;
         m_name = new char [strlen(name) + 1];
         strcpy(m_name, name);
         strcpy(m_SKU, SKU);

@@ -48,6 +48,7 @@ public:
     PosApp(const char* filename);
     PosApp(const PosApp& other) = delete;
     PosApp& operator=(const PosApp& other) = delete;
+    ~PosApp ();
 };
 
 

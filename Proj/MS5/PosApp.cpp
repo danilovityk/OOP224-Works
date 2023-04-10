@@ -163,7 +163,7 @@ void PosApp::listItems() {
         m_items[i] -> displayType(POS_LIST);
         m_items[i] -> write(cout);
         cout << endl; 
-        total = total += m_items[i]->cost() * m_items[i] -> quantity();
+        total += m_items[i]->cost() * m_items[i] -> quantity();
     }
     
     cout << "-----^--------^--------------------^-------^---^----^---------^-------------^" << endl;

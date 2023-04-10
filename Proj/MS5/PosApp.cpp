@@ -62,7 +62,7 @@ int PosApp::menu() {
 void PosApp::run() {
     int choice = 0;
     
-    cout << ">>>> Loading Items..........................................................."<< endl << "Loading data from datafile.csv" << endl;
+    cout << ">>>> Loading Items..........................................................." << endl;
     
     do{
         choice = menu();

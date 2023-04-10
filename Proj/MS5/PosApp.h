@@ -41,7 +41,7 @@ private:
     void saveRecs() const;
     void loadRecs();
     
-    void printActionTitle (const char* title) const;
+   
 public:
     int menu();
     void run();

@@ -18,6 +18,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <iomanip>
 #include "Perishable.h"
 #include "NonPerishable.h"
@@ -121,7 +122,7 @@ void PosApp::stockItem() {
 }
 
 void PosApp::listItems() {
-    
+    double total = 0;
     bool flag = false;
     
     do {
@@ -140,6 +141,7 @@ void PosApp::listItems() {
             }
         }
         
+    
         
     }while (flag);
     
@@ -147,7 +149,7 @@ void PosApp::listItems() {
     cout << " Row | SKU    | Item Name          | Price |TX |Qty |   Total | Expiry Date |" << endl;
     cout << "-----|--------|--------------------|-------|---|----|---------|-------------|" << endl;
     
-    double total = 0;
+   
     
     for (int i = 0; i < m_numberOfItems; i++)
     {
@@ -224,17 +226,6 @@ void PosApp::loadRecs() {
     
 }
 
-
-void PosApp::printActionTitle (const char* title) const{
-    cout << setfill('.');
-    cout.setf(73);
-    cout.setf(ios::left);
-    cout << title;
-    cout << setfill(' ');
-    cout.unsetf(ios::left);
-    cout.setf(ios::right);
-    
-}
 
 
 }

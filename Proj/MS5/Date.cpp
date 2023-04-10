@@ -36,6 +36,7 @@ void Date::getSystemDate(int &year, int &mon, int &day, int &hour, int &min, boo
           }
 }
 
+
 int Date::uniqueDateValue(int year, int mon, int day, int hour, int min) const{
     
     return year * 535680 + mon * 44640 + day * 1440 + hour * 60 + min;

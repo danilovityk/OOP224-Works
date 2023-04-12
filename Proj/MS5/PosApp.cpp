@@ -158,7 +158,7 @@ void PosApp::addItem() {
     
 }
 
-int PosApp::select()const{
+int PosApp::select(){
     int result = 0;
     bool flag = false;
     

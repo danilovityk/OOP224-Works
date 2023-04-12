@@ -160,6 +160,28 @@ void PosApp::addItem() {
 
 int PosApp::select()const{
     int result = 0;
+    bool flag = false;
+    
+    do {
+        
+        flag = false;
+        
+        for (int i = 1; i < m_numberOfItems; i++)
+        {
+            
+            if (m_items[i-1]->operator>(*m_items[i]))
+            {
+                flag = true;
+                Item *temp = m_items[i];
+                m_items[i] = m_items[i-1];
+                m_items[i-1] = temp;
+            }
+        }
+        
+    
+        
+    }while (flag);
+    
     cout << ">>>> Item Selection by row number............................................" << endl;
     cout << "Press <ENTER> to start....";
     cin.ignore(9999, '\n');

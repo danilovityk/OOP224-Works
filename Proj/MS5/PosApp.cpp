@@ -244,6 +244,9 @@ void PosApp::removeItem() {
     index--;
     
     cout << "Removing...." << endl;
+    m_items[index]->displayType(POS_FORM);
+    m_items[index]->write(cout);
+    
     
     delete m_items[index];
     

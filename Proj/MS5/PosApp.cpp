@@ -55,7 +55,7 @@ int PosApp::menu() {
         }
         
     }while (!flag);
-        
+    cin.ignore();
     return choice;
 }
 
@@ -158,8 +158,87 @@ void PosApp::addItem() {
     
 }
 
+int PosApp::select()const{
+    int result = 0;
+    cout << ">>>> Item Selection by row number............................................" << endl;
+    cout << "Press <ENTER> to start....";
+    cin.ignore(9999, '\n');
+    
+    cout << ">>>> Listing Items..........................................................." << endl;
+    
+    cout << " Row | SKU    | Item Name          | Price |TX |Qty |   Total | Expiry Date |" << endl;
+    cout << "-----|--------|--------------------|-------|---|----|---------|-------------|" << endl;
+    
+   
+    
+    for (int i = 0; i < m_numberOfItems; i++)
+    {
+        cout << setw(4);
+        cout << setfill(' ');
+        cout.setf(ios::right);
+        cout << i+1;
+        cout.unsetf(ios::right);
+        cout.setf(ios::left);
+        cout << " | ";
+        m_items[i] -> displayType(POS_LIST);
+        m_items[i] -> write(cout);
+        cout << endl;
+    }
+    
+    cout << "-----^--------^--------------------^-------^---^----^---------^-------------^" << endl;
+    
+    
+    cout << "Enter the row number: ";
+    
+    
+    
+    
+    do {
+        cin >> result;
+        
+        if (cin.fail()){
+            result = 0;
+            cin.clear();
+            cin.ignore(9999, '\n');
+            cout << "Invalid Integer, try again: ";
+            
+        }else if (result < 1){
+            result = 0;
+            cout << "Invalid Integer, try again: ";
+        }else if (result > m_numberOfItems){
+            result = 0;
+            cout << "[1<=value<=" << m_numberOfItems << "], retry: Enter the row number: ";
+            
+        }
+        
+        
+    } while (result == 0);
+    
+    
+    
+    
+    return result;
+}
+
 void PosApp::removeItem() { 
-    cout << "Running removeItem()" << endl;
+    int index = select();
+    index--;
+    
+    cout << "Removing...." << endl;
+    
+    delete m_items[index];
+    
+    for (int i = index; i < m_numberOfItems - 1; i++)
+    {
+        m_items[i] = m_items[i+1];
+    }
+    
+    
+    m_numberOfItems--;
+    
+    cout << ">>>> DONE!................................................................." << endl;
+    
+    
 }
 
 void PosApp::stockItem() { 

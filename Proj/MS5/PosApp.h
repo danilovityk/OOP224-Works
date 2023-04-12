@@ -40,7 +40,7 @@ private:
     void POS();
     void saveRecs() const;
     void loadRecs();
-    
+    int select()const;
    
 public:
     int menu();

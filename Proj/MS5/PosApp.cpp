@@ -224,10 +224,7 @@ int PosApp::select(){
             cin.ignore(9999, '\n');
             cout << "Invalid Integer, try again: ";
             
-        }else if (result < 1){
-            result = 0;
-            cout << "Invalid Integer, try again: ";
-        }else if (result > m_numberOfItems){
+        }else if (result > m_numberOfItems || result < 1){
             result = 0;
             cout << "[1<=value<=" << m_numberOfItems << "], retry: Enter the row number: ";
             

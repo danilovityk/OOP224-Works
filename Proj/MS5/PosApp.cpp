@@ -291,6 +291,8 @@ void PosApp::stockItem() {
         }
         
     } while (result == 0);
+    
+    *m_items[index] += result;
     cout << ">>>> DONE!..................................................................." << endl;
     
 }

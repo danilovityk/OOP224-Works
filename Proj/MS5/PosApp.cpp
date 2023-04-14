@@ -158,7 +158,7 @@ void PosApp::addItem() {
     
 }
 
-int PosApp::select(){
+int PosApp::select() {
     int result = 0;
     bool flag = false;
     
@@ -263,8 +263,36 @@ void PosApp::removeItem() {
     
 }
 
-void PosApp::stockItem() { 
-    cout << "Running stockItem()" << endl;
+void PosApp::stockItem() {
+    
+    int index = select();
+    index--;
+    
+    cout << "Selected Item:" << endl;
+    m_items[index]->displayType(POS_FORM);
+    m_items[index]->write(cout);
+    
+    cout << "Enter quantity to add: ";
+    
+    int result = 0;
+    do {
+        cin >> result;
+        
+        if (cin.fail()){
+            result = 0;
+            cin.clear();
+            cin.ignore(9999, '\n');
+            cout << "Invalid Integer, try again: ";
+            
+        }else if (result > MAX_STOCK_NUMBER - m_items[index]->quantity() || result < 1){
+            result = 0;
+            cout << "[1<=value<=" << MAX_STOCK_NUMBER - m_items[index]->quantity() << "], retry: Enter quantity to add: ";
+            
+        }
+        
+    } while (result == 0);
+    cout << ">>>> DONE!..................................................................." << endl;
+    
 }
 
 void PosApp::listItems() {

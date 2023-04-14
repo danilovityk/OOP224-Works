@@ -25,6 +25,7 @@
 #include "PosApp.h"
 #include "Utils.h"
 #include "Item.h"
+#include "Bill.h"
 using namespace std;
 namespace sdds
 {
@@ -349,8 +350,65 @@ void PosApp::listItems() {
   
 }
 
-void PosApp::POS() { 
-    cout << "Running POS()" << endl;
+void PosApp::POS() {
+    char iSKU [MAX_SKU_LEN];
+    int index = -1;
+    Bill bill;
+    double total = 0;
+    
+    do {
+        cout << "Enter SKU or <ENTER> only to end sale..." << endl;
+        cout << "> ";
+        cin.getline(iSKU, MAX_SKU_LEN + 1);
+        
+        if (strlen(iSKU) != 0){
+            
+            
+            index = -1;
+            for (int i = 0; i < m_numberOfItems; i++){
+                if (*m_items[i] == iSKU){
+                    index = i;
+                    i = m_numberOfItems;
+                }
+            }
+            
+            
+            
+            
+            if (index != -1){
+                
+                
+                if (m_items[index]->quantity() > 0)
+                {
+                    
+                    bill.add(m_items[index]);
+                    *m_items[index] -= 1;
+                    total += m_items[index]->cost();
+                    
+                    m_items[index]->displayType(POS_FORM);
+                    m_items[index]->write(cout);
+                    
+                    cout << endl << ">>>>> Added to bill" << endl;
+                    cout << ">>>>> Total: " << setprecision(2) << total << endl;
+                    
+                    
+                }else
+                {
+                    cout << "Item out of stock" << endl;
+                }
+                
+            }else{
+                cout << "!!!!! Item Not Found !!!!!" << endl;
+            }
+            
+            
+            
+            
+            
+        }
+    }while (strlen(iSKU) != 0);
+    
+    bill.print(cout);
 }
 
 void PosApp::saveRecs() const {

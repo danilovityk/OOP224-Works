@@ -186,6 +186,7 @@ std::ostream& Date::display(std::ostream& ostr) const
             ostr << m_year << "/";
             if (m_month < 10) ostr << "0";
             ostr << m_month << "/" << setfill('0') << setw(2) << m_day << ", " << setw(2) <<  m_hour << ":" << setw(2) << m_minute;
+            
         }
         
     }else
@@ -202,7 +203,7 @@ std::ostream& Date::display(std::ostream& ostr) const
         
         
     }
-    
+    ostr.fill(' ');
     ostr.unsetf(ios::right);
     ostr.setf(ios::left);
     return ostr;
